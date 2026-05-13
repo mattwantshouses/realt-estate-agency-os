@@ -67,7 +67,7 @@ export function FlowDemo() {
       setIsAutoPlaying(false);
       return;
     }
-    const timer = setTimeout(() => setActiveStep((p) => p + 1), 7000);
+    const timer = setTimeout(() => setActiveStep((p) => p + 1), 8000);
     return () => clearTimeout(timer);
   }, [isAutoPlaying, activeStep, flow.length]);
 
@@ -190,8 +190,8 @@ export function FlowDemo() {
               transition={{ duration: 0.25 }}
               className="space-y-4"
             >
-              {/* Thought — typewriter effect */}
-              <div className="bg-stone-800 text-white rounded-lg px-4 py-3 shadow-lg">
+              {/* Thought — fixed height, typewriter fills it */}
+              <div className="bg-stone-800 text-white rounded-lg px-4 py-3 shadow-lg min-h-[100px]">
                 <p className="text-[10px] font-mono text-stone-400 mb-1.5 uppercase tracking-wider">
                   💭 {specialists.find(s => s.slug === flowSlugs[activeStep])?.name} is thinking...
                 </p>
@@ -200,13 +200,8 @@ export function FlowDemo() {
                 </p>
               </div>
 
-              {/* Handoff card — appears after typing finishes */}
-              <AnimatePresence>
-              {showCard && <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4 }}
-                className="bg-white border border-teal-200 rounded-lg shadow-sm overflow-hidden">
+              {/* Handoff card — shell always visible, content fades in after typing */}
+              <div className="bg-white border border-teal-200 rounded-lg shadow-sm overflow-hidden">
                 <div className="bg-teal-50 px-4 py-2 border-b border-teal-100 flex items-center justify-between">
                   <span className="text-[10px] font-mono font-bold text-teal-700 uppercase tracking-wider">
                     📤 Passes this card to {step.handoffCard.to}
@@ -215,26 +210,34 @@ export function FlowDemo() {
                     Step {activeStep + 1} of {flow.length}
                   </span>
                 </div>
-                <div className="p-4 space-y-2">
-                  <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs font-mono text-stone-500">
-                    <span><span className="text-stone-400">From:</span> {step.handoffCard.from}</span>
-                    <span><span className="text-stone-400">To:</span> {step.handoffCard.to}</span>
-                    <span>
-                      <span className="text-stone-400">Confidence:</span>{" "}
-                      <span className="text-emerald-600 font-semibold">{step.handoffCard.confidence}</span>
-                    </span>
-                  </div>
-                  <p className="text-xs font-mono text-stone-400">{step.handoffCard.case_name}</p>
-                  <p className="text-sm text-stone-700 leading-relaxed">{step.handoffCard.summary}</p>
-                  <div className="bg-teal-50 rounded px-3 py-2">
-                    <p className="text-xs text-stone-600">
-                      <span className="font-semibold text-teal-700">Next:</span>{" "}
-                      {step.handoffCard.nextAction}
+                <div className="relative min-h-[180px]">
+                  {/* Preparing state — big italic text, pulsing */}
+                  <div className={`absolute inset-0 flex items-center justify-center transition-opacity duration-500 ${showCard ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
+                    <p className="text-xl italic text-stone-300 animate-pulse">
+                      Preparing handoff card...
                     </p>
                   </div>
+                  {/* Card content — fades in when ready */}
+                  <div className={`p-4 space-y-2 transition-opacity duration-500 ${showCard ? "opacity-100" : "opacity-0"}`}>
+                    <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs font-mono text-stone-500">
+                      <span><span className="text-stone-400">From:</span> {step.handoffCard.from}</span>
+                      <span><span className="text-stone-400">To:</span> {step.handoffCard.to}</span>
+                      <span>
+                        <span className="text-stone-400">Confidence:</span>{" "}
+                        <span className="text-emerald-600 font-semibold">{step.handoffCard.confidence}</span>
+                      </span>
+                    </div>
+                    <p className="text-xs font-mono text-stone-400">{step.handoffCard.case_name}</p>
+                    <p className="text-sm text-stone-700 leading-relaxed">{step.handoffCard.summary}</p>
+                    <div className="bg-teal-50 rounded px-3 py-2">
+                      <p className="text-xs text-stone-600">
+                        <span className="font-semibold text-teal-700">Next:</span>{" "}
+                        {step.handoffCard.nextAction}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </motion.div>}
-              </AnimatePresence>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
