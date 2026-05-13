@@ -21,8 +21,8 @@ Every qualification captures these. If a field can't be determined from the requ
 
 | Temperature | Criteria | Assignment |
 |---|---|---|
-| 🔥 **Hot** | Pre-approved (or cash), specific property, timeline under 60 days, ready to act | Senior agent (Diana, Marcus, or Jess) |
-| 🟡 **Warm** | Real intent, stated budget, timeline 2-6 months, exploring but serious | Any agent based on specialty match |
+| 🔥 **Hot** | Pre-approved (or cash), OR stated budget + timeline under 3 months + clear intent. Doesn't need all three — two strong signals with urgency = Hot. | Senior agent (Diana, Marcus, or Jess) |
+| 🟡 **Warm** | Real intent, some details stated, timeline 3-6 months, exploring but serious | Any agent based on specialty match |
 | 🔵 **Cold** | "Just looking," no timeline, no budget discussed, early research phase | Alex (growth opportunity) or nurture sequence |
 
 **A referral is always at least Warm** regardless of other signals. Someone took the time to refer them — that means something.

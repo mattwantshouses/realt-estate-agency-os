@@ -11,8 +11,8 @@ export default function Home() {
           <h1 className="text-4xl sm:text-5xl font-bold text-stone-900 tracking-tight">
             The Agency OS
           </h1>
-          <p className="mt-3 text-base sm:text-lg text-stone-500 max-w-md mx-auto leading-relaxed">
-            Six AI specialists that run your real estate workflow — connected by structured handoffs.
+          <p className="mt-3 text-base sm:text-lg text-stone-500 leading-relaxed">
+            Track and automate every real estate lead from start to finish.
           </p>
           <div className="mt-6">
             <a
