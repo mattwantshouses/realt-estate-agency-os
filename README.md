@@ -230,4 +230,4 @@ This system is built for residential real estate (Diana's focus). Commercial, la
 
 Built for Clief Notes Weekly Competition #4.
 
-[GitHub Repo]() · [Companion Site]() · [Clief Notes Community]()
+[GitHub Repo](https://github.com/sparkles-inc/agency-os) · [Companion Site](https://agency-os-tan-five.vercel.app) · [Clief Notes Community]()
