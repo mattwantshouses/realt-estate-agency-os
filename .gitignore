@@ -1,0 +1,30 @@
+# dependencies
+site/node_modules
+
+# next.js
+site/.next/
+site/out/
+
+# vercel
+site/.vercel
+.vercel
+
+# typescript build info
+site/*.tsbuildinfo
+site/next-env.d.ts
+
+# misc
+.DS_Store
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# env files
+.env
+.env.*
+!.env.example
+
+# editor
+.vscode/
+.idea/
