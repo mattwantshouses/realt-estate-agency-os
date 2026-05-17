@@ -30,11 +30,13 @@ export default function Home() {
       {/* Video */}
       <section className="border-b border-stone-100">
         <div className="max-w-2xl mx-auto px-6 py-10">
-          <div className="bg-stone-900 rounded-xl aspect-video flex items-center justify-center">
-            <div className="text-center px-4">
-              <div className="text-3xl mb-2">▶️</div>
-              <p className="text-stone-400 text-sm">90-second walkthrough</p>
-            </div>
+          <div className="aspect-video rounded-xl overflow-hidden bg-stone-900">
+            <iframe
+              src="https://www.loom.com/embed/2fbdaaff405f4a5f87c079c5e9ebb470"
+              className="w-full h-full"
+              allowFullScreen
+              title="Agency OS walkthrough"
+            />
           </div>
         </div>
       </section>
