@@ -186,7 +186,7 @@ That's it. The architecture, handoff format, specialist roles, and routing logic
 
 ## The Companion Site
 
-**[View the interactive onboarding experience →]()**
+**[View the interactive onboarding experience →](https://agency-os-tan-five.vercel.app)**
 
 Walk through the system visually. Upload your existing SOPs to see where they map. Watch a lead flow through the folders. Click each folder open to explore what's inside.
 
