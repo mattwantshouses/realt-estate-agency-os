@@ -2,142 +2,168 @@
 
 ---
 
-## Example 1: New Zillow Lead (Clear Routing)
+## Example 1: Cold Outreach Response — Motivated Seller
 
 **Incoming request:**
-> Hi! Saw a house on Zillow I love at 1845 Westwood Dr 78704. Wondering if it's still available and what comparable homes have sold for nearby? Budget around 550k. Need to move by end of summer. Have two kids, so schools matter. Thanks! - Sara M.
+> "Yeah I might be interested. We've had the house for about 12 years. It needs some work. What do you pay?"
 
-**Channel:** Zillow lead form
-**Received by:** Auto-forwarded to team inbox, 9:14 AM
-**Agent context:** None — no prior relationship.
+**Channel:** Text reply to RMD outreach list, 2:18 PM  
+**Agent context:** Matt ran a direct mail campaign to absentee owners in 32210 (Ortega/Murray Hill area).  
+**Mode:** Investor (responding to RMD Home Buyers outreach)
 
 **Routing decision:** → **01_lead_qualifier**
 
-Even though Sara asks about comps (Property Research territory) and a specific property, she's a **new lead** who hasn't been qualified yet. Lead Qualifier goes first. Always. The research happens after we know who she is and what she actually needs.
+This is a new lead response. Even though we know the mode (investor), this person hasn't been qualified yet — no name, no address, no timeline, no financial situation. Lead Qualifier goes first.
 
 **Handoff card produced:**
 
 ```
 From:        Orchestrator
 To:          Lead Qualifier
-Case:        Sara M. — Zillow inquiry, 78704
-Agent:       TBD (Lead Qualifier assigns)
-Date:        2026-05-12
+Case:        Unknown — text response, 32210 outreach list
+Mode:        Investor
+Date:        2026-05-26
 Confidence:  High
 
 SUMMARY
-New Zillow lead with specific property interest, stated budget,
-timeline, and family constraints. Clear buy intent. Needs
-qualification before research.
+Inbound text from RMD direct mail outreach. May be open to
+selling. Needs qualification before any offer conversation.
 
 KEY DETAILS
-- Client: Sara M. (no prior contact info beyond Zillow)
-- Property: 1845 Westwood Dr, 78704
-- Intent: Buy
-- Timeline: End of summer (~3 months)
-- Budget: ~$550K
-- Source: Zillow listing page, 9:14 AM
+- Client: Unknown name (text only)
+- Property: Unknown — somewhere in 32210 (outreach zone)
+- Intent: Sell (investor mode — cash offer interest)
+- Timeline: Unknown
+- Budget: Unknown ("what do you pay?" = price-curious, not committed)
+- Source: RMD direct mail — 32210 absentee owner list
 
 CONTEXT
-First contact. No prior relationship. She mentioned schools and
-two kids — this is family-driven, not investment. She named a
-specific address, which means she's been actively browsing.
+"We've had the house about 12 years" + "needs some work" +
+"might be interested" = open but not urgent. Absentee owner
+who's been sitting on a property. Classic investor-mode profile.
 
 GAPS
-- Pre-approval status
-- Currently renting or selling?
-- Partner involved in decision?
-- How firm is $550K? ("around" could mean flexible)
+- Name and contact info
+- Property address
+- Reason considering selling
+- Mortgage/lien status
+- Extent of needed work
 
 NEXT ACTION
-Qualify this lead — capture missing fields, rate temperature,
-assign team member from roster.
+Lead Qualifier: Classify as motivated seller (investor mode).
+Rate temperature. Note gaps for Matt to fill in first response.
 ```
 
 ---
 
-## Example 2: Active Deal Update (Urgent Routing)
+## Example 2: Referral — Buyer Client
 
 **Incoming request:**
-> Diana, the inspection on the Johnson deal came back and it's not great. Foundation cracks on the east wall, inspector estimates $12-18K. Option period ends Thursday. What should we tell the buyers?
+> "Matt — my sister-in-law is moving from Atlanta to Jacksonville for a new job. She's been pre-approved up to $425K and needs to be in by mid-August. Thought of you. Her name is Rachel Torres. Reach her at 904-555-0192."
 
-**Channel:** Slack DM from Jess, 4:45 PM
-**Agent context:** Jess is the agent on the Johnson deal. Under contract on 2204 Del Curto Rd.
+**Channel:** Text from past client (Brian Clark)  
+**Agent context:** Brian closed with Matt in 2025. Matt knows him well.  
+**Mode:** Agent (buyer representation)
 
-**Routing decision:** → **04_transaction_coordinator** (primary), flag **03_client_communication** as secondary
+**Routing decision:** → **01_lead_qualifier**
 
-This is an active deal with a ticking deadline. Transaction Coordinator goes first — they track the option period, know the deal timeline, and will produce the framework for the decision. Client Communication is secondary — Jess will need a carefully drafted message to the buyers once the team decides on approach.
+New lead, even though intent and temperature are already clear. Lead Qualifier logs the qualification, captures all six fields, and produces the handoff for Client Communication (first outreach).
+
+**Handoff card produced:**
+
+```
+From:        Orchestrator
+To:          Lead Qualifier
+Case:        Rachel Torres — referral from Brian Clark
+Mode:        Agent
+Date:        2026-05-26
+Confidence:  High
+
+SUMMARY
+Pre-approved buyer, $425K ceiling, mid-August close deadline.
+Referral from past client Brian Clark. Matt knows Brian
+personally.
+
+KEY DETAILS
+- Client: Rachel Torres, 904-555-0192
+- Intent: Buy
+- Budget: Pre-approved up to $425K
+- Timeline: Must close by mid-August (~11 weeks)
+- Location: Jacksonville — new to area, no neighborhood pref yet
+- Source: Referral — Brian Clark (past client, closed 2025)
+
+CONTEXT
+Relocation from Atlanta. Pre-approved = financially ready.
+Mid-August = hard deadline. Matt should acknowledge Brian in
+first message.
+
+⚡ Timeline alert: ~11 weeks to close. With FL closing times
+(30–45 days for financed), needs to be under contract by early
+July at the latest.
+
+GAPS
+- Neighborhood preferences
+- Bed/bath, size requirements
+- Kids / school district priority?
+- Partner/co-buyer?
+
+NEXT ACTION
+Lead Qualifier: Capture all six fields, rate temperature,
+produce handoff for Client Communication (first outreach).
+```
+
+---
+
+## Example 3: Active Deal — Inspection Results
+
+**Incoming request:**
+> "Inspection on the Garcia deal is back. Roof needs full replacement (est. $14-18K), A/C is 2007 but functional. Inspection period runs out Friday. What do we do?"
+
+**Channel:** Note from TC support  
+**Agent context:** Garcia deal — 2847 Longleaf Pine Dr, 32223 (Mandarin). Matt is buyer's agent.  
+**Mode:** Agent
+
+**Routing decision:** → **04_transaction_coordinator** (primary), **03_client_communication** secondary
+
+Active deal with a live deadline. TC goes first — they know the deal timeline and confirm when the inspection period expires. Client Communication is secondary — Matt will need a message to the buyers once he decides on the approach.
 
 **Handoff card produced:**
 
 ```
 From:        Orchestrator
 To:          Transaction Coordinator
-Case:        Johnson — inspection results, option period decision
-Agent:       Jess
-Date:        2026-06-03
+Case:        Garcia — inspection results, deadline approaching
+Mode:        Agent
+Date:        2026-05-26
 Confidence:  High
 
 SUMMARY
-Inspection on 2204 Del Curto Rd (Johnson deal) found foundation
-settlement. Est. $12-18K repair. Option period expires Thursday
-5 PM. Jess needs decision framework: repair, credit, or terminate.
+Inspection on 2847 Longleaf Pine Dr (Garcia deal) found roof
+needing full replacement ($14–18K) and older A/C (2007).
+FL inspection period expires Friday. Matt needs options
+framework.
 
 KEY DETAILS
-- Client: Johnson (buyers)
-- Property: 2204 Del Curto Rd, 78704
-- Intent: Active deal — under contract
-- Timeline: Option period expires Thursday 5:00 PM (2 days)
-- Issue: Foundation cracks, east wall, est. $12-18K
+- Client: Garcia (buyers, Matt representing)
+- Property: 2847 Longleaf Pine Dr, 32223 (Mandarin)
+- Deal status: Under contract, in inspection period
+- Issue: Roof replacement ($14–18K), A/C 2007
+- Deadline: Inspection period expires Friday (3 days)
 
 CONTEXT
-This came from Jess directly. She's asking Diana for direction,
-which means she doesn't feel confident handling the negotiation
-strategy alone on this one. The dollar amount and tight timeline
-are why.
+TC support flagged this. Roof is the big issue. A/C at 2007
+has life left but is a secondary leverage point.
 
-Secondary: 03_client_communication will need this after TC
-frames the options. Jess needs a client-facing message.
+Secondary: 03_client_communication will need a message to
+the Garcias once Matt decides approach.
 
 GAPS
-- Full inspection report (request from Jess)
-- Seller's likely response to repair vs. credit request
-- Diana's preferred negotiation strategy at this price point
+- Full inspection report
+- Matt's preferred approach at this price point
 
 NEXT ACTION
-TC: Frame the three options (repair, credit, terminate) with
-timeline implications. Flag the Thursday 5 PM deadline. Then
-hand to Client Communication for Jess's client message.
+TC: Confirm Friday deadline time (FL — must be in writing
+before period expires). Frame three options with timeline
+and dollar implications. Hand to Client Communication for
+buyer-facing message.
 ```
-
----
-
-## Example 3: Ambiguous Request (Needs Clarification)
-
-**Incoming request:**
-> Hey, this is Tom. Maria referred me. I've been thinking about the Wendover place. Can you help?
-
-**Channel:** Text message to Diana's cell, forwarded to inbox
-**Agent context:** Diana notes: "Maria Chen is a past client. Don't know which Wendover property."
-
-**Routing decision:** → **Back to the agent** with one question.
-
-This is ambiguous in two ways: (1) is Tom looking to buy, sell, or something else? (2) "the Wendover place" could be an address, a development, or a nickname for a property Maria told him about. I can infer he's likely a buyer (Maria referred him and he mentions a property), but I don't have enough to route confidently.
-
-**Response to agent:**
-
-```
-ROUTING HOLD — Need one clarification.
-
-Tom texted about "the Wendover place" via Maria Chen's referral.
-I think he's a buyer interested in a specific property, but I need
-the address or enough context to confirm.
-
-Can you reply to Tom or check with Maria:
-"Which property on Wendover — do you have the address?"
-
-Once I have the address, I'll route to Lead Qualifier with
-Maria's referral context.
-```
-
-**Why not just route to Lead Qualifier anyway?** Because without knowing the property or even the intent, the Lead Qualifier would produce a half-empty qualification with Low confidence. One text back to Tom gets us the info we need to route properly. The 30 seconds it takes to clarify saves 10 minutes of back-and-forth downstream.

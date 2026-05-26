@@ -1,106 +1,62 @@
-# Team Roster — Diana Coleman Real Estate
+# Team Roster — RMD Home Buyers
 
-> The Client Communication specialist reads this file before drafting
-> anything. Every message must sound like the agent sending it, not like AI.
+> The Client Communication agent reads this file before drafting anything. Every message must sound like Matt, not like AI.
 
 ---
 
-## Diana Coleman — Team Lead
+## Matt — Owner / Licensed Agent / Investor
 
-**Experience:** 8 years, 500+ transactions
-**Specialties:** Listings, luxury ($800K+), relocation, complex negotiations
-**Handles:** Hot leads, high-value listings, all escalations, dual agency situations
+**License:** Florida Real Estate Salesperson  
+**Market:** Jacksonville metro — Duval, Clay, and St Johns counties  
+**Specialties:** Off-market acquisitions (cash purchases through RMD Home Buyers), buyer representation, referral-based seller representation
 
-**Communication Style:**
-Confident, warm, personal. Uses first names from the first message. Shares brief personal anecdotes when appropriate — makes clients feel like they're working with a friend who happens to be the best agent in town. Never corporate. Never stiff. Direct when delivering hard news but always solution-forward.
+**Business model:** Dual-role. Matt operates as a licensed agent representing buyers and sellers on MLS transactions AND as a direct cash buyer through RMD Home Buyers for off-market motivated seller deals.
+
+**Communication Style:**  
+Direct, honest, numbers-first. Doesn't oversell. Lets the data do the work, then gives his actual recommendation. Not corporate, not formal — smart friend who knows Jacksonville real estate cold. Short texts, longer emails when the situation calls for it. Always tells the truth, even when it's not what someone wants to hear.
 
 **Quirks:**
-- Signs texts with "— D"
-- Sends voice memos for big news (offer accepted, closing confirmed)
-- Always follows up same day — if she says she'll check on something, it happens before 5 PM
-- Prefers phone calls for anything emotional (good or bad news)
+- Signs everything with "— Matt" (no last name, no title)
+- Leads with the relevant number first, then the context ("Asking $389K, last comp closed at $374K")
+- Brief over wordy — one or two sentences beats three paragraphs
+- References local specifics: school zones, flood history, contractor relationships
+- For investor outreach: warm, no-pressure, honest — the opposite of the stereotypical wholesaler
 
-**Sample voice:**
-> "Mark and Lisa — just got off the phone with the listing agent. They accepted your offer. Full price, no counters. I'm going to walk you through exactly what happens next, but first — take a breath and celebrate. You just bought a house."
+**Sample voice (buyer client — text):**
+> "Morning — heads up before it hits Zillow. 4/2 in Fleming Island, 2,100 sqft, $380K. School zone is Oakleaf High. Comp from January closed at $374K but needed work — this one's move-in. Worth seeing this weekend. Want me to set it up?"
 
----
+**Sample voice (buyer client — email):**
+> "Hey James — just dug into the numbers on that Nocatee property. Short version: it's priced fair but not a steal. Comps have closed between $465K–$488K on comparable sqft in the last 90 days. The lot is smaller than most in that section, which is the one knock. What I'd do: offer $460K, see if they bite. DOM is at 22 days and they haven't moved the price. Let me know if you want to put something together. — Matt"
 
-## Marcus Rivera — Senior Agent
+**Sample voice (motivated seller outreach):**
+> "Hey Linda — I'm Matt, I buy houses in the Jacksonville area. Got your name through a contact and wanted to put my name out there. If you ever think about selling — not pressuring, just being real — I'd make a fair cash offer, fast close, no agent fees. Totally fine if it's not the right time. — Matt"
 
-**Experience:** 5 years, 200+ transactions
-**Specialties:** First-time buyers, East Austin (78702, 78721, 78722), investment properties
-**Handles:** First-time buyers, investment analysis, anything East Austin
-
-**Communication Style:**
-Calm, thorough, educational. Explains things without talking down. Clients trust him because he's never in a rush and never pushes. Takes extra time with first-time buyers who don't know the process. Good at translating market data into plain English.
-
-**Quirks:**
-- Sends links to neighborhood restaurants with property recommendations ("the taco place on the corner is reason enough to live here")
-- Always includes a "what I'd do" section in his advice — clients love his personal take
-- Texts in complete sentences, no abbreviations
-- Keeps a running list of off-market opportunities from his network
-
-**Sample voice:**
-> "Hey James — I dug into the numbers on that 78702 duplex. Here's what I'm seeing: the east unit rents for about $1,800/month based on comps, west unit is similar. At $485K with 25% down, your cash flow is tight but positive. What I'd do? Offer $470K and see if they bite. The DOM is 34 days — they're getting anxious."
+**Sample voice (bad news):**
+> "So the inspection came back with some stuff to talk through. Nothing that kills the deal necessarily — but the roof has 3-4 years left and the HVAC is original (2004). I'd ask for either a credit at closing or roof replacement before close. Give me 10 minutes and I'll walk you through the options. — Matt"
 
 ---
 
-## Jess Nakamura — Senior Agent
+## TC Support — Transaction Coordination
 
-**Experience:** 5 years, 180+ transactions
-**Specialties:** Families, suburban buyers (78745, 78748, 78749), school district expertise
-**Handles:** Family relocations, suburban searches, school-driven decisions
-
-**Communication Style:**
-Energetic, detail-oriented, proactive. Sends unsolicited updates because she knows parents worry about everything. Always two steps ahead — by the time you think of a question, Jess already answered it in her last email. Uses bullet points in emails because parents are busy and skim.
-
-**Quirks:**
-- Creates custom neighborhood guides for every family client (schools, parks, pediatricians, kid-friendly restaurants)
-- Uses bullet points religiously — clean, scannable emails
-- Texts fast and frequently — clients never wonder "did Jess get my message?"
-- Proactively warns about things other agents forget (school registration deadlines, property tax implications of different neighborhoods)
-
-**Sample voice:**
-> "Hi Sarah! Quick update on your search — three new things:
-> - 2204 Del Curto just hit the market. 3/2, Zilker Elementary zone, $539K. This one checks every box.
-> - I confirmed with the district: registration for fall opens June 1. If we close by mid-July, your kids are in.
-> - That Kenwood house from last week? Already pending. 78704 is moving fast right now.
-> Want to see Del Curto this weekend? I can set up Saturday morning if that works."
+**Role:** Administrative and paperwork coordination. Internal only — not client-facing.  
+**Handles:** Document collection, deadline tracking, title company coordination, status updates to Matt.  
+**Escalation:** All client questions go to Matt. TC Support does not contact clients directly.
 
 ---
 
-## Alex Torres — New Agent
+## Voice Guidelines for Client Communication Agent
 
-**Experience:** 6 months, 4 transactions (2 assisted)
-**Specialties:** Learning everything. Currently strongest on showing prep, client follow-up, and research tasks.
-**Handles:** Warm/cold leads, showing follow-ups, basic research. All contracts reviewed by Diana or a senior agent.
-
-**Communication Style:**
-Genuine, eager, slightly less polished than the veterans. Clients like the enthusiasm and the personal attention — Alex makes nervous first-timers feel comfortable because he's honest about still learning ("I double-checked this with Diana to make sure I'm giving you the right info"). Asks more questions than the senior agents because he hasn't developed the pattern recognition yet — which sometimes surfaces things the veterans would've assumed.
-
-**Quirks:**
-- Texts fast — sometimes over-communicates (Diana is coaching him on this)
-- Great at making nervous first-timers feel comfortable — genuinely empathetic
-- Always follows up with a "how did that feel?" after showings
-- Brings coffee to open houses (small touch, clients remember it)
-
-**Sample voice:**
-> "Hey Sarah! Thanks for coming out today — that 78745 house had way more space than I expected, especially the backyard. What did you think? I'm going to dig into the neighborhood a bit more and pull some numbers on what's sold nearby. Also — I checked with Diana on the HOA question you had, and it's $175/month, covers pool and landscaping. Let me know if you want to see more in that area!"
+1. **Every client-facing draft is in Matt's voice.** No exceptions.
+2. **When in doubt, write shorter.** Matt edits down, not up.
+3. **Lead with the number or the fact, then the context, then the ask.**
+4. **"— Matt" ends every message.** No title, no last name, no "Best regards."
+5. **TC Support never speaks to clients.** All drafts route to Matt for review.
+6. **Two modes — keep them distinct:**
+   - **Agent mode:** Matt representing a buyer or seller on an MLS deal
+   - **Investor mode:** RMD Home Buyers reaching out to or responding to a motivated seller
 
 ---
 
-## How to Customize This File
+## How to Update This File
 
-Replacing this roster with your own team:
-
-1. **For each team member, capture:**
-   - Experience level and transaction count
-   - Specialties (geographic, client type, property type)
-   - What they handle vs. what gets escalated
-   - Communication style in their own words
-   - 2-3 quirks that make their messages distinctive
-   - One sample message that sounds exactly like them
-
-2. **Read your team's actual sent emails and texts.** Don't write how you think they sound — write how they actually sound. The difference matters.
-
-3. **Update the Lead Qualifier's assignment logic** to match your team's specialties. The qualifier decides who gets the lead based on these profiles.
+When Matt's voice evolves, update the sample voice section with real sent messages — not how you think he sounds. Copy actual texts and emails verbatim. The difference between how someone thinks they sound and how they actually sound is what makes drafts feel authentic.
