@@ -1,3 +1,7 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
 @AGENTS.md
 
 ---
@@ -64,11 +68,11 @@ To prevent wasting tokens on scanning irrelevant files:
 Keep these files current:
 
 | File | Update when... |
-|------|----------------|
-| `MEMORY.md` | A bug is fixed, an API behaves unexpectedly, a decision is made, something tried didn't work, a lesson is learned. Add to "Lessons Learned" and update "Next Session Priority." |
+|------|---------------|
+| `MEMORY.md` | A bug is fixed, an API behaves unexpectedly, a decision is made about how to build something, something tried didn't work, a lesson is learned. Add to "Lessons Learned" table and update "Next Session Priority." |
 | `ROADMAP.md` | A new feature is discussed, a completed item needs a ✅, a priority changes, or the Current Sprint checklist changes. |
-| `ARCHITECTURE.md` | A new module is added, the data flow changes, a new external service is connected, or a handler's status changes. |
-| `HANDOFF.md` | When a phase completes: mark it ✅, update `NEXT_ACTION` with next phase's step-by-step tasks, update the system state table. |
+| `ARCHITECTURE.md` | A new module is added, the data flow changes, a new external service is connected, or a handler's status changes (placeholder → working). |
+| `HANDOFF.md` | When a phase completes: mark it ✅ in the implementation plan, update `NEXT_ACTION` with the next phase's step-by-step tasks, and update the system state table. Do this before ending the session. |
 
 Update the relevant doc **before ending the session** — don't leave it for next time.
 
@@ -115,39 +119,39 @@ For multi-step tasks, state a brief plan with verifiable success criteria:
 
 Transform vague tasks: "fix the bug" → "write a test that reproduces it, then make it pass."
 
-## Rule 5 — Use the Model Only for Judgment Calls
+## Rule 5 — Use the model only for judgment calls
 
 Use for: classification, drafting, summarization, extraction. Do NOT use for: routing, retries, deterministic transforms. If code can answer, code answers.
 
-## Rule 6 — Token Budgets Are Not Advisory
+## Rule 6 — Token budgets are not advisory
 
 Per-task: 4,000 tokens. Per-session: 30,000 tokens. If approaching budget, summarize and start fresh. Surface the breach. Do not silently overrun.
 
-## Rule 7 — Surface Conflicts, Don't Average Them
+## Rule 7 — Surface conflicts, don't average them
 
 If two patterns contradict, pick one (more recent / more tested). Explain why. Flag the other for cleanup.
 
-## Rule 8 — Read Before You Write
+## Rule 8 — Read before you write
 
 Before adding code, read exports, immediate callers, shared utilities. If unsure why existing code is structured a certain way, ask.
 
-## Rule 9 — Tests Verify Intent, Not Just Behavior
+## Rule 9 — Tests verify intent, not just behavior
 
 Tests must encode WHY behavior matters, not just WHAT it does. A test that can't fail when business logic changes is wrong.
 
-## Rule 10 — Checkpoint After Every Significant Step
+## Rule 10 — Checkpoint after every significant step
 
 Summarize what was done, what's verified, what's left. Don't continue from a state you can't describe back.
 
-## Rule 11 — Match the Codebase's Conventions, Even If You Disagree
+## Rule 11 — Match the codebase's conventions, even if you disagree
 
 Conformance > taste inside the codebase. If you think a convention is harmful, surface it. Don't fork silently.
 
-## Rule 12 — Fail Loud
+## Rule 12 — Fail loud
 
 "Completed" is wrong if anything was skipped silently. "Tests pass" is wrong if any were skipped. Default to surfacing uncertainty, not hiding it.
 
-## Rule 13 — Write Tests You Would Bet Your Existence On
+## Rule 13 — Write tests you would bet your existence on
 
 The standard for every test: **if the code is broken, this test fails. If this test passes, the user's first run works.** That is the only bar that matters.
 
@@ -162,26 +166,27 @@ Before committing a test, ask yourself: if I introduced the exact bug this test 
 **What this requires:**
 - Import and execute the actual module. Patch only external I/O (HTTP, disk, LLM APIs) — never the logic under test.
 - When native deps break CI, stub them at `sys.modules` before any project import, then run the real code.
-- Assert on the specific outcome the user cares about: the right file was written, the right URL was crawled, the right text appeared in the prompt.
-- Size guard limits to reflect the real system's behaviour, not an idealized version of it.
+- Assert on the specific outcome the user cares about: the right file was written, the right URL was crawled, the right text appeared in the prompt. Not just that a function was called.
+- Size guard limits (fetch counts, loop trip-wires) to reflect the real system's behaviour, not an idealized version of it.
 
 ---
 
-# Additional Constraints
+## Additional Constraints
 
-## Never Expose API Keys
+### Never Expose API Keys
 
 Never expose API keys in the UI, client-side code, browser console logs, or error messages. API keys belong only in server-side code or environment variables.
 
-## No Silent Failures
+### No Silent Failures
 
-**The system must always tell the user when something goes wrong.** Silent failures are unacceptable.
+**This system must always tell the user when something goes wrong.** Silent failures are unacceptable.
 
-- Every `except` block that catches a real failure MUST surface the error to the user — not just log a warning.
+- Every `except` block that catches a real failure MUST surface the error visibly — not just `logging.warning()`.
+- `logging.warning()` is acceptable ONLY for truly expected, benign conditions (e.g., a file is already up to date). For anything that prevents a deliverable from being created, use `logging.error()` AND notify the user.
 - If a pipeline step returns `None` or an empty result when content was expected, treat that as a failure and notify.
 - "Non-fatal" does NOT mean "silent." Non-fatal means the pipeline continues — but the user is still told what failed and why.
 
-## Agent Safety Constraints
+### Agent Safety Constraints
 
 Agents must NEVER:
 - Delete or move files/directories without explicit user confirmation in chat
@@ -195,7 +200,7 @@ Permitted agent actions:
 
 If destructive changes are discovered: stop, report specifics to the user, request permission before recovery steps.
 
-## Git Merge Protocol — MANDATORY
+### Git Merge Protocol — MANDATORY
 
 Before merging ANY branch into main (or any other branch), you MUST:
 
@@ -209,7 +214,7 @@ NEVER assume that "merge my fix into main" means "merge everything that happens 
 If a branch is many commits ahead of main and most of those commits predate this session, flag it immediately:
 > "This branch is N commits ahead of main. Only 1 of those is from this session. The rest are older work. Do you want me to merge all N commits, or just cherry-pick the fix from this session?"
 
-## Protect the User. Protect the Codebase.
+### Protect the User. Protect the Codebase.
 
 Before taking any action that touches shared state (merges, pushes, deploys, file deletions, config changes, dependency updates), stop and analyze first. Surface what could go wrong. Do not proceed silently.
 
