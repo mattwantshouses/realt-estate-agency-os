@@ -2,229 +2,139 @@
 
 ---
 
-## Example 1: Buyer Property Research — Full Brief
+## Example 1: Buyer Client — Specific Property, St Johns County
 
-**Handoff card received from Lead Qualifier:**
-> Sara M., qualified buyer. Asking about 1845 Westwood Dr 78704. Budget ~$550K. Family with 2 kids, schools matter. Assigned to Jess.
+**Handoff from Lead Qualifier:**
+> Rachel Torres, pre-approved up to $425K. Agent: Matt. She asked about a property she found: 42 Greenfield Crossing Dr, Nocatee (32081, St Johns County).
 
 **Research brief produced:**
-
-```
-PROPERTY RESEARCH BRIEF
-1845 Westwood Dr, Austin TX 78704
-Prepared: 2026-05-12 | Agent: Jess Nakamura
-
-PROPERTY DETAILS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Price:          $575,000
-Bed/Bath:       3/2
-Sqft:           1,650
-Lot:            0.18 acres
-Year built:     1965
-DOM:            12 days
-Price changes:  None — original list price
-HOA:            None
-Flood zone:     Zone X (minimal risk)
-MUD:            No
-
-COMPS (sold within 90 days, <0.5 mi)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-1. 1812 Westwood Dr — $545,000 (45 days ago)
-   3/2, 1,580 sqft. Similar size, slightly smaller lot.
-   Sold at ask. Buyers waived appraisal contingency.
-
-2. 2001 Arpdale Ln — $590,000 (22 days ago)
-   3/2, 1,720 sqft. Updated kitchen + new HVAC.
-   Sold 3% above ask — multiple offers in first week.
-
-3. 1705 Westwood Dr — $610,000 (31 days ago)
-   4/2, 1,890 sqft. Extra bedroom drove premium.
-   Sold at ask after 19 DOM.
-
-Comp interpretation: $545-610K range for this street. The
-subject at $575K is fair for the specs. At $415/sqft, it's
-right at the 78704 average. Not a deal, not overpriced.
-
-SCHOOLS (confirmed attendance zones)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Elementary:  Zilker Elementary — rated 8/10
-Middle:      Lively Middle — rated 7/10
-High:        Austin High — rated 7/10
-
-Note: Zilker Elementary is one of the highest-rated in Austin
-ISD. This is a genuine selling point for Sara. Some families
-in 78745 specifically look at 78704 for the school zone.
-
-RED FLAGS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🔴 Foundation risk: Built 1965, Central Austin clay soil.
-   Pre-1970 builds in 78704 have elevated foundation movement
-   risk. Dedicated foundation inspection is non-negotiable —
-   not just the general home inspection.
-
-🟡 Development: Mixed-use project permitted 2 blocks east
-   (1900 block of S. Lamar). City records show retail +
-   residential. Could increase traffic/noise. Could also
-   increase walkability and property values long-term. Worth
-   mentioning to Sara as a "know before you buy."
-
-THE ONE THING
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-This property is $25K over Sara's stated budget. But comps
-say $555-565K is a defensible offer range. The question for
-Sara isn't "can I afford this house" — it's "am I willing
-to stretch from $550K to $560K for the Zilker Elementary
-zone?" Because the alternatives in her budget are in the
-same zone. She has options either way.
-
-ALTERNATIVES IN BUDGET
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-1. 2204 Del Curto Rd — $539,000
-   3/2, 1,580 sqft. Same school zone. Newer roof (2019).
-   Smaller lot but better interior condition per photos.
-
-2. 1601 Kenwood Ave — $548,000
-   3/2, 1,620 sqft. Zilker Elementary zone. Larger lot.
-   Needs cosmetic updates (kitchen, bathrooms).
-
-MARKET CONTEXT (from Market Intel)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-78704: 1.4 months inventory, 68% selling above ask, avg
-DOM 18 days. This is a competitive market. Sara needs to
-be pre-approved and ready to act fast on any property she
-likes. Multiple offers are likely under $600K.
-```
-
-**Handoff card produced → Client Communication:**
-Routes to Client Communication with the full brief attached plus tone guidance: "Lead with the school zone — it's Sara's #1 priority. Be honest about the $25K gap. Present alternatives."
 
 ---
 
-## Example 2: Neighborhood Brief — Client Choosing Between Areas
+**Property Research Brief**  
+**Property:** 42 Greenfield Crossing Dr, Nocatee (32081, St Johns County)  
+**Client:** Rachel Torres — $425K ceiling, relocation buyer  
+**Comps as of:** May 2026
 
-**Handoff card received from Lead Qualifier:**
-> Buyer comparing East Austin (78702) vs. South Austin suburbs (78745). Budget $500K. Wants investment potential but also livability.
+**Listing snapshot:**
+- Asking: $429,900 (over budget by ~$5K)
+- 3/2, 1,874 sqft, built 2019
+- HOA: $160/month
+- **CDD fee: $3,200/year** ⚠️ (see red flags below)
+- DOM: 18 days, no price reductions
 
-**Research brief produced:**
+**Comp analysis:**
 
-```
-NEIGHBORHOOD COMPARISON
-78702 (East Austin) vs. 78745 (South Austin)
-Budget: $500,000 | Prepared: 2026-05-12
+| Address | Sold | Date | Sqft | $/sqft | DOM | Notes |
+|---|---|---|---|---|---|---|
+| 57 Greenfield Crossing | $421,000 | Apr 2026 | 1,890 | $223 | 9 | Same builder, nearly identical floor plan |
+| 30 Lakeview Branch Dr | $435,000 | Mar 2026 | 2,010 | $216 | 6 | Slightly larger, updated kitchen |
+| 81 Crosswater Pkwy | $418,500 | Mar 2026 | 1,810 | $231 | 11 | Same section, sold over ask |
 
-                        78702               78745
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Median price:           $520K               $445K
-Price/sqft:             $425                $285
-Inventory:              1.1 months          2.3 months
-Avg DOM:                14 days             28 days
-% above ask:            72%                 41%
-5-yr appreciation:      +45%                +28%
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**Comp interpretation:** Comps range $418K–$435K for similar product. Asking price of $429,900 is priced fairly — not a steal. DOM of 18 days with no price drop suggests the seller isn't panicking.
 
-WHAT $500K BUYS YOU
-78702: A 2/1 or small 3/1 that needs work. Possibly a
-       duplex/ADU opportunity if you're handy. Tight.
-78745: A 3/2 or 4/2 in good condition with a yard.
-       Turnkey. Room to breathe.
+**Schools:** Pine Island Academy (K–8) and Creekside High School. St Johns County is consistently the top-ranked school district in Florida — significant quality-of-life feature for any buyer prioritizing schools.
 
-SCHOOLS
-78702: Mixed. Some attendance zones feed into strong
-       schools (Metz, Sanchez), others less so. Verify
-       the specific address — don't assume.
-78745: Generally stronger elementary options. Blazier,
-       Menchaca, Kiker all rated 7-8/10.
+**Red flags:**
+- ⚠️ **CDD fee: $3,200/year.** Nocatee is a CDD community. This is separate from HOA and appears as a line item on the property tax bill. At Rachel's price point, this adds ~$267/month to the real carrying cost. She needs to know this before she falls in love with the neighborhood.
+- 2019 build puts the original roof at 7 years — within useful life, no concern yet.
 
-LIFESTYLE
-78702: Walkable to restaurants, bars, coffee. Young,
-       creative, rapidly changing. Live music proximity.
-       Noise is part of the package.
-78745: Suburban, quiet, family-oriented. Car-dependent.
-       Good parks (Mary Moore Searight). Costco proximity
-       matters to this demographic.
+**The one thing:** Nocatee is one of the fastest-growing planned communities in NE Florida. Demand from families targeting St Johns schools has kept this sub-market extremely competitive. Most comparable homes sell in under 14 days. At $429,900 with Rachel's $425K ceiling, she needs to negotiate down ~$5K or adjust her ceiling. If she waits, a competing offer at full ask is realistic within 7–10 days.
 
-INVESTMENT ANGLE
-78702: Higher appreciation, lower cash flow. Duplex/ADU
-       potential if zoning allows. More volatile.
-78745: Lower appreciation, more predictable. Better
-       cash flow if rented (larger homes, lower price/sqft).
-       Steadier long-term.
-
-WATCH-OUTS
-78702: Gentrification dynamics are real. Handle
-       conversations about neighborhood change with
-       cultural awareness. Some longtime residents have
-       strong feelings. Also: flooding history near Boggy
-       Creek — check specific addresses.
-78745: MUD taxes in some subdivisions (especially south
-       of Slaughter). Verify before quoting monthly costs.
-       Traffic on Manchaca/S. 1st can be significant at
-       peak times.
-
-THE ONE THING
-If the client wants investment potential AND livability at
-$500K, 78745 gives them more house and a better quality of
-life today. 78702 gives them more upside and a cooler zip
-code but a smaller, rougher house. The honest answer:
-78745 for living, 78702 for investing.
-```
+**Alternatives at or under $425K (same school zone):**
+- 94 Conservation Creek Dr, 32081 — 3/2, 1,755 sqft, $419,900, listed 6 days ago
+- 23 Barbados Trl, 32259 — 3/2, 1,890 sqft, $422,000, RiverTown area, comparable St Johns school quality
 
 ---
 
-## Example 3: Quick Research — Inspection Support
+## Example 2: Investor Mode — ARV Research, Duval County
 
-**Handoff card received from Transaction Coordinator:**
-> Foundation settlement found on Del Curto Rd inspection. Jess needs context: are foundation issues common in this area? What do repairs typically cost?
+**Handoff from Lead Qualifier:**
+> Matt (RMD Home Buyers) is considering purchasing 4217 Ramona Blvd, Jacksonville 32205 (Riverside/Murray Hill). Motivated seller responded to outreach. ARV needed before Matt makes an offer.
 
 **Research brief produced:**
 
-```
-INSPECTION CONTEXT BRIEF
-Foundation Issues — 78704 Pre-1970 Builds
-Prepared: 2026-06-03
+---
 
-PREVALENCE
-Foundation movement is common in Central Austin pre-1970
-construction. The combination of expansive clay soil
-(common in 78704, 78702, 78731) and older pier-and-beam
-or slab foundations creates seasonal movement as soil
-expands and contracts with moisture.
+**Property Research Brief — Investor Mode (ARV)**  
+**Property:** 4217 Ramona Blvd, Jacksonville 32205  
+**Purpose:** ARV estimate for RMD cash offer  
+**Comps as of:** May 2026
 
-Not all movement requires repair. Cosmetic cracks (hairline,
-diagonal from window/door corners) are typical and often
-non-structural. Settlement with measurable deflection
-(what the inspector found on Del Curto Rd) is more serious
-and should be evaluated by a structural engineer, not just
-a general inspector.
+**Property facts (Duval County property appraiser):**
+- Year built: 1951 (pier-and-beam construction likely — see red flags)
+- Sqft: 1,250
+- Beds/bath: 3/1.5
+- Condition per seller: "needs some work" (deferred maintenance, unknown scope)
 
-TYPICAL REPAIR COSTS (Austin market, 2025-2026)
-- Minor leveling (pressed piling): $3,000 - $8,000
-- Moderate repair (multiple piers): $8,000 - $20,000
-- Major structural (extensive shoring): $20,000 - $40,000+
+**As-is comp analysis (distressed / investor sales):**
 
-The $12-18K estimate for Del Curto Rd falls in the moderate
-range. This is consistent with a single-wall settlement on
-a 1960s-era home.
+| Address | Sold | Sqft | $/sqft | Condition | Notes |
+|---|---|---|---|---|---|
+| 4302 Ramona Blvd | $185,000 | 1,180 | $157 | As-is, minor work | Sold to investor, June 2025 |
+| 4118 Chestnut St | $178,000 | 1,290 | $138 | Significant deferred maint | Cash close, 14 days |
+| 4412 Post St | $195,000 | 1,320 | $148 | Cosmetic only | Sold to owner-occupant |
 
-NEGOTIATION CONTEXT
-Foundation issues are not uncommon in 78704 offers. Most
-buyers don't walk — they negotiate a credit. The typical
-approach:
-- Get a structural engineer's estimate (not just the
-  general inspector's number)
-- Request a credit at closing (gives buyer control over
-  the repair contractor and timeline)
-- Alternatively request seller repair (less common — buyer
-  has no control over quality)
+**ARV comp analysis (fully renovated):**
 
-In 78704's current market (1.4 months inventory, 68%
-above ask), sellers are more likely to agree to a credit
-than a repair. They want to close, not manage a contractor.
+| Address | Sold | Sqft | $/sqft | Condition | Notes |
+|---|---|---|---|---|---|
+| 4155 Ramona Blvd | $295,000 | 1,240 | $238 | Full renovation 2024 | Updated kitchen, baths, roof |
+| 4380 Chestnut St | $285,000 | 1,280 | $223 | Updated cosmetics + kitchen | Sold quickly, multiple offers |
+| 4290 Burpee Ave | $310,000 | 1,310 | $237 | Full gut renovation | Top of market for this block |
 
-RECOMMENDATION FOR JESS
-Get a structural engineer quote before negotiating. The
-inspector's $12-18K range is broad. A structural engineer
-will give a specific number that's harder for the seller
-to argue with. Cost: $300-500 for the engineer visit.
-Schedule immediately — option period is ticking.
-```
+**ARV estimate:**
+- **Conservative ARV: $285,000** (standard cosmetic + kitchen/bath renovation)
+- **Optimistic ARV: $305,000** (full renovation, comparable to top comp)
+
+**Renovation scope note (Matt to verify with contractor):**
+- Cosmetic only (paint, flooring, fixtures): $20K–$35K → conservative ARV
+- Moderate (kitchen, baths, cosmetic): $45K–$65K → mid-ARV
+- Full renovation: $75K–$95K → optimistic ARV
+
+**Red flags:**
+- ⚠️ **Pre-1960 pier-and-beam.** Murray Hill has many homes from this era. Recommend structural + dedicated foundation inspection. Sill plate rot and termite damage are common.
+- ⚠️ **3/1.5 vs. renovated comps showing 3/2.** To compete at upper ARV, a bath addition may be needed — increases renovation cost significantly.
+
+**The one thing:** Murray Hill is actively gentrifying. The investor comp market here is competitive — other buyers are working this zip code. If the seller's price expectation is in the $175K–$195K range relative to as-is comps, this could work. If they want $220K+, the numbers get tight fast.
+
+---
+
+## Example 3: Neighborhood Brief — Relocation Buyer, Clay County
+
+**Handoff from Client Communication:**
+> Rachel Torres is open to Clay County (Orange Park / Fleming Island area) if schools are solid and price is under $425K. Matt asked for a neighborhood overview before their second call.
+
+**Research brief produced:**
+
+---
+
+**Neighborhood Brief — Orange Park / Fleming Island, Clay County**  
+**For:** Rachel Torres — relocation buyer, $425K ceiling  
+**As of:** May 2026
+
+**Overview:** Orange Park and Fleming Island are the core of Clay County's residential market — established, family-oriented suburbs 20–25 minutes south of downtown Jacksonville. Solid school district, lower crime relative to comparable Duval neighborhoods, and meaningfully lower price points than St Johns County. Less flashy than Nocatee; more "actual neighborhood" — established trees, mixed housing ages, genuine community feel.
+
+**Schools:** Clay County School District. Generally above average and well-regarded in the Jacksonville metro. Fleming Island area: Fleming Island High School. Orange Park area: Orange Park High School. Clay is a strong second choice after St Johns County and outperforms most Duval schools.
+
+**Market snapshot (May 2026):**
+- Median price (3/2 SFR): $360K–$395K
+- DOM: ~21 days average — active but not frenzied
+- Rachel's $425K ceiling gives her solid options and negotiating room
+
+**What $400K buys:**
+- Fleming Island: 4/2 or 3/2 with 2-car garage, 1,900–2,200 sqft, typically in a planned community with HOA
+- Orange Park: 3/2, 1,700–1,900 sqft, often larger lots, less HOA presence
+- Most Clay County communities do NOT have CDDs (meaningful cost advantage vs. Nocatee)
+
+**Commute:**
+- Downtown Jacksonville: 25–30 min via I-295 (no toll)
+- Southside/Baymeadows employment corridor: 20–25 min
+- St Johns Town Center: 20–25 min
+
+**Watch-outs:**
+- Older homes (pre-2000) in Orange Park proper — some deferred maintenance at lower price points
+- Flood risk is low in most of Fleming Island (elevated terrain)
+- HOA restrictions in some communities worth reviewing before offer
+
+**The one thing:** Clay County gets overlooked by buyers chasing the St Johns County school brand. For a relocation buyer without school-age kids locked into a specific district, Fleming Island gives significantly more house for the money with a very livable commute. Resale is solid and demand is steady. Not a glamour market — a reliable one.
