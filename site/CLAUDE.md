@@ -2,85 +2,105 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-@AGENTS.md
+---
+
+## What This Is
+You are helping Matt run an AI-powered real estate business based in Jacksonville, FL (Duval, Clay, St Johns counties — expanding to all of FL in stages). This repo is the **operating system** for the business. AI agents handle lead qualification, transaction coordination, client communication, market intelligence, voice calls, marketing, and public records monitoring.
 
 ---
 
-# Session Startup Protocol
+## Session Startup Protocol
 
-At the start of every session, before doing anything else:
-
-1. Read `MEMORY.md` — check "Next Session Priority" and recent session log
-2. Read `ROADMAP.md` — check Current Sprint and Backlog
-3. Read `ARCHITECTURE.md` — load current system state
-4. **Consult the Repository Routing Map below** to identify the directories relevant to the current task and isolate your context retrieval.
-5. Run `git branch -r --no-merged main` and report any branches that are ahead of main. Ask the user: "These branches have unmerged work — should I merge or clean any of them up before we start?" Wait for their answer before proceeding.
-
-Then immediately tell the user:
-> "Based on [MEMORY/ROADMAP], the next priority is **[specific action]**. Want to tackle that, or is there something else on your mind?"
-
-Be specific — name the exact next step, not a vague category.
+1. Read `MEMORY.md` — check "Next Session Priority" and recent log
+2. Read `ROADMAP.md` — check current sprint and what's in progress
+3. Read `ARCHITECTURE.md` — check what's built vs stubbed
+4. Identify which workspace this task belongs to (routing table below)
+5. Read ONLY that folder's `CONTEXT.md` before starting work
+6. Run `git branch -r --no-merged main` and report any branches ahead of main. Ask: "These branches have unmerged work — should I merge or clean any of them up before we start?" Wait for answer.
+7. State immediately: "Next priority is **[specific task]**. Tackle that, or something else?"
 
 ---
 
-# Session Close-Out Protocol
+## Session Close-Out Protocol
 
-At the end of every session, before stopping:
-
-1. Run `git log main..<current-branch> --oneline` and show the full output to the user.
-2. Ask explicitly: "Ready to merge this branch into main and delete it?"
-3. **Do not merge, push to main, or delete the branch without the user typing an explicit yes in this conversation.** Prior context, implied approval, or task completion does NOT count as permission.
-4. If the user says yes:
-   - Merge into main and push
-   - Delete the remote branch: `git push origin --delete <branch>`
-   - Delete the local branch: `git branch -d <branch>`
-5. If the user says no or doesn't respond: leave the branch untouched and add a note to `MEMORY.md` under "Next Session Priority" so the next agent picks it up.
-
-**Why this matters:** agent sessions create `claude/` branches and push work there. Without an explicit close-out, branches accumulate indefinitely and main falls behind. The start-of-session audit (step 5 above) is the safety net when a session ends without completing this protocol.
+1. Update `MEMORY.md` — add session log entry, any decisions made, lessons learned
+2. Update `ROADMAP.md` — mark completed items ✅, add newly discovered tasks
+3. Update `ARCHITECTURE.md` — if any new files created or integrations changed
+4. Run `git log main..<current-branch> --oneline` and show full output to user
+5. Ask: "Ready to merge into main?" — **do not merge, push to main, or delete the branch without the user typing an explicit yes in this conversation.** Prior context, implied approval, or task completion does NOT count as permission.
+6. If yes: merge into main, push, delete remote branch (`git push origin --delete <branch>`), delete local branch (`git branch -d <branch>`)
+7. If no: leave branch untouched and note in `MEMORY.md` under "Next Session Priority"
 
 ---
 
-# Repository Routing Map & Exclusions
+## 3-Layer Architecture (Clief 3.1)
 
-To prevent wasting tokens on scanning irrelevant files:
-1. Identify your target workspace from the table below.
-2. Read ONLY the workspace-specific files and related source files.
-3. Do NOT recursively search, read, or list directories of other workspaces.
+| Layer | File | Role |
+|-------|------|------|
+| 1 — The Map | `CLAUDE.md` | Session routing, naming rules, session protocols |
+| 2 — The Rooms | `{workspace}/CONTEXT.md` | Workspace-level context, which files to load, which skills are active |
+| 3 — The Tools | `{workspace}/skills/` | Packaged, reusable processes wired to specific workspaces |
 
-| Task Workspace | Core Files to Read | Workspaces to IGNORE |
-| :--- | :--- | :--- |
-| Orchestrator | `00_orchestrator/` | all agent dirs |
-| Lead Qualifier | `01_lead_qualifier/` | all other agent dirs |
-| Property Research | `02_property_research/` | all other agent dirs |
-| Client Communication | `03_client_communication/` | all other agent dirs |
-| Transaction Coordinator | `04_transaction_coordinator/` | all other agent dirs |
-| Market Intel | `05_market_intel/` | all other agent dirs |
-| Shared Utilities | `_shared/` | agent-specific dirs |
-| Site / UI | `site/` | agent dirs, `_shared/` |
+**Agent 4-file blueprint** — every agent workspace has exactly these files:
 
-## Global Context Exclusions
-* **Do NOT read build caches or dependencies:** `node_modules/`, `.venv/`, `.pytest_cache/`
+| File | Purpose |
+|------|---------|
+| `identity.md` | Who the agent is, what it cares about, how it sounds |
+| `rules.md` | Decision logic, constraints, routing rules |
+| `examples.md` | Sample inputs → correct outputs |
+| `handoff.md` | What this agent accepts as input and where it routes output |
 
----
+**Inter-agent communication unit:** Handoff Cards. Agents pass structured Handoff Cards (see `_shared/handoff-card-template.md`) rather than raw text. The orchestrator creates them; specialist agents receive them.
 
-# System Doc Maintenance Rules
-
-Keep these files current:
-
-| File | Update when... |
-|------|---------------|
-| `MEMORY.md` | A bug is fixed, an API behaves unexpectedly, a decision is made about how to build something, something tried didn't work, a lesson is learned. Add to "Lessons Learned" table and update "Next Session Priority." |
-| `ROADMAP.md` | A new feature is discussed, a completed item needs a ✅, a priority changes, or the Current Sprint checklist changes. |
-| `ARCHITECTURE.md` | A new module is added, the data flow changes, a new external service is connected, or a handler's status changes (placeholder → working). |
-| `HANDOFF.md` | When a phase completes: mark it ✅ in the implementation plan, update `NEXT_ACTION` with the next phase's step-by-step tasks, and update the system state table. Do this before ending the session. |
-
-Update the relevant doc **before ending the session** — don't leave it for next time.
+**Agent status:** All agents are currently STUB. Check `ARCHITECTURE.md` for current status before assuming any agent is functional.
 
 ---
 
-# Coding Behavior Guidelines
+## Workspace Routing Table (Layer 2)
 
-## Rule 1 — Think Before Coding
+| Task | Folder | Read First |
+|------|--------|------------|
+| New lead / inbound message | `00_orchestrator` | `00_orchestrator/CONTEXT.md` |
+| Lead qualification | `01_lead_qualifier` | `01_lead_qualifier/CONTEXT.md` |
+| Property research | `02_property_research` | `02_property_research/CONTEXT.md` |
+| Drafting emails / texts / scripts | `03_client_communication` | `03_client_communication/CONTEXT.md` |
+| Transaction paperwork / milestones | `04_transaction_coordinator` | `04_transaction_coordinator/CONTEXT.md` |
+| Market data / neighborhood intel | `05_market_intel` | `05_market_intel/CONTEXT.md` |
+| Phone calls / voice agent | `06_voice_agent` | `06_voice_agent/CONTEXT.md` |
+| List building / outreach | `07_marketing` | `07_marketing/CONTEXT.md` |
+| Public records / motivated sellers | `08_public_records` | `08_public_records/CONTEXT.md` |
+| Adding a team member | `09_agent_onboarding` | `09_agent_onboarding/CONTEXT.md` |
+| Identity, voice, shared resources | `_shared` | `_shared/CONTEXT.md` |
+| Integrations (Google Sheets, DocuSign) | `_infrastructure` | `_infrastructure/CONTEXT.md` |
+
+**Do NOT load all agent folders at once.** Load only the relevant workspace's CONTEXT.md + files needed for the task.
+
+---
+
+## Skills (Layer 3)
+
+Skills are packaged processes wired into specific workspaces — not loaded globally. Each workspace's `CONTEXT.md` lists which skills are active there. New skills are added to the workspace's `skills/` folder and registered in that workspace's `CONTEXT.md`.
+
+---
+
+## File Naming Conventions
+
+| File Type | Convention | Example |
+|-----------|-----------|---------|
+| Agent files | Fixed names | `identity.md`, `rules.md`, `examples.md`, `handoff.md` |
+| Market intel | `markets/{county}/_overview.md` | `markets/duval/_overview.md` |
+| Zip profiles | `markets/{county}/zip_profiles/zip_{zip}.md` | `zip_profiles/zip_32224.md` |
+| Handoff cards | `HANDOFF_{address}_{YYYY-MM-DD}.md` | `HANDOFF_123MainSt_2026-05-25.md` |
+| Drafts | `{client-name}_{type}_draft.md` | `johnson_intro-email_draft.md` |
+| Skill files | `{verb}-{noun}_skill.md` | `create-docusign-package_skill.md` |
+
+---
+
+## Coding Rules
+
+These apply when writing automation scripts, n8n flows, or any code in this repo.
+
+### Rule 1 — Think before coding
 
 Before implementing anything:
 - State assumptions explicitly. If uncertain, ask.
@@ -88,9 +108,9 @@ Before implementing anything:
 - If a simpler approach exists, say so. Push back when warranted.
 - If something is unclear, stop and name what's confusing.
 
-## Rule 2 — Simplicity First
+### Rule 2 — Simplicity first
 
-Minimum code that solves the problem. Nothing speculative.
+Minimum that solves the problem. Nothing speculative.
 - No features beyond what was asked.
 - No abstractions for single-use code.
 - No "flexibility" that wasn't requested.
@@ -98,131 +118,159 @@ Minimum code that solves the problem. Nothing speculative.
 
 If you write 200 lines and it could be 50, rewrite it.
 
-## Rule 3 — Surgical Changes
+### Rule 3 — Touch only what you must
 
-Touch only what you must. Clean up only your own mess.
-- Don't "improve" adjacent code, comments, or formatting.
-- Don't refactor things that aren't broken.
-- Match existing style, even if you'd do it differently.
-- If you notice unrelated dead code, mention it — don't delete it.
-- Remove imports/variables/functions that YOUR changes made unused; leave pre-existing dead code alone.
+Don't improve adjacent files or refactor things that aren't broken. Match existing style. Mention unrelated dead code — don't delete it. Remove only what YOUR changes made unused. Every changed line should trace to the user's request.
 
-Every changed line should trace directly to the user's request.
-
-## Rule 4 — Goal-Driven Execution
+### Rule 4 — Goal-driven execution
 
 For multi-step tasks, state a brief plan with verifiable success criteria:
 ```
 1. [Step] → verify: [check]
 2. [Step] → verify: [check]
 ```
-
 Transform vague tasks: "fix the bug" → "write a test that reproduces it, then make it pass."
 
-## Rule 5 — Use the model only for judgment calls
+### Rule 5 — Use the model only for judgment calls
 
 Use for: classification, drafting, summarization, extraction. Do NOT use for: routing, retries, deterministic transforms. If code can answer, code answers.
 
-## Rule 6 — Token budgets are not advisory
+### Rule 6 — Token budgets are not advisory
 
 Per-task: 4,000 tokens. Per-session: 30,000 tokens. If approaching budget, summarize and start fresh. Surface the breach. Do not silently overrun.
 
-## Rule 7 — Surface conflicts, don't average them
+### Rule 7 — Surface conflicts, don't average them
 
 If two patterns contradict, pick one (more recent / more tested). Explain why. Flag the other for cleanup.
 
-## Rule 8 — Read before you write
+### Rule 8 — Read before you write
 
 Before adding code, read exports, immediate callers, shared utilities. If unsure why existing code is structured a certain way, ask.
 
-## Rule 9 — Tests verify intent, not just behavior
+### Rule 9 — Tests verify intent, not just behavior
 
 Tests must encode WHY behavior matters, not just WHAT it does. A test that can't fail when business logic changes is wrong.
 
-## Rule 10 — Checkpoint after every significant step
+### Rule 10 — Checkpoint after every significant step
 
 Summarize what was done, what's verified, what's left. Don't continue from a state you can't describe back.
 
-## Rule 11 — Match the codebase's conventions, even if you disagree
+### Rule 11 — Match the codebase's conventions, even if you disagree
 
 Conformance > taste inside the codebase. If you think a convention is harmful, surface it. Don't fork silently.
 
-## Rule 12 — Fail loud
+### Rule 12 — Fail loud
 
 "Completed" is wrong if anything was skipped silently. "Tests pass" is wrong if any were skipped. Default to surfacing uncertainty, not hiding it.
 
-## Rule 13 — Write tests you would bet your existence on
+### Rule 13 — Write tests you would bet your existence on
 
-The standard for every test: **if the code is broken, this test fails. If this test passes, the user's first run works.** That is the only bar that matters.
+The standard: **if the code is broken, this test fails. If this test passes, the user's first run works.** That is the only bar.
 
-Before committing a test, ask yourself: if I introduced the exact bug this test is meant to catch, would it fail? If the answer is "maybe" or "I think so," the test is not done.
+Before committing a test: if I introduced the exact bug this test is meant to catch, would it fail? If the answer is "maybe," the test is not done.
 
-**What this rules out:**
-- Inline copies of production logic. A copy verifies itself, not the code. When the real implementation diverges, the test keeps passing and the bug ships.
-- Mocking so aggressively that the real code path never runs. If you mock a core function in a test of the pipeline that calls it, you're testing your mock, not the pipeline.
-- Assertions that can't distinguish working code from broken code. `assert result is not None` passes when the function returns the wrong thing.
-- Tests that only pass because nothing ran. A test that skips an import failure silently is worse than no test.
+- No inline copies of production logic — a copy verifies itself, not the code.
+- No over-mocking — if you mock the function under test, you're testing your mock.
+- No assertions that can't distinguish working from broken code.
+- No tests that only pass because nothing ran.
+- Patch only external I/O (HTTP, disk, LLM APIs) — never the logic under test.
+- Assert on the specific outcome that matters: right file written, right URL crawled, right text in prompt.
 
-**What this requires:**
-- Import and execute the actual module. Patch only external I/O (HTTP, disk, LLM APIs) — never the logic under test.
-- When native deps break CI, stub them at `sys.modules` before any project import, then run the real code.
-- Assert on the specific outcome the user cares about: the right file was written, the right URL was crawled, the right text appeared in the prompt. Not just that a function was called.
-- Size guard limits (fetch counts, loop trip-wires) to reflect the real system's behaviour, not an idealized version of it.
+### Rule 14 — No `identity.md` in data/knowledge folders
+
+`05_market_intel` and `_shared` data files are knowledge bases, not personas. Do not create `identity.md` files there.
 
 ---
 
-## Additional Constraints
+## Client Communication Rules
 
-### Never Expose API Keys
+These apply whenever drafting anything that will be sent to a client or prospect.
 
-Never expose API keys in the UI, client-side code, browser console logs, or error messages. API keys belong only in server-side code or environment variables.
+- **Load `_shared/identity.md` first** — every draft must match Matt's voice and frame. No exceptions.
+- **CC `transactions@rmdhomebuyers.com`** on all client email — put it in the draft, not just the instructions.
+- **One call to action per communication.** No fluff, no filler.
+- Mark all output as `DRAFT` — Matt reviews before anything goes out.
 
-### No Silent Failures
+---
+
+## Compliance Rules
+
+- **DNC gate is mandatory.** Any lead sourced from public records or marketing lists MUST pass a DNC (Do Not Call) check before entering any outreach sequence. Scraped lead → DNC check → `01_lead_qualifier`. Never skip this step (TCPA exposure).
+- **Voice agent transparency.** The voice agent must identify itself as a virtual assistant on every call — never claim to be Matt.
+- **No pricing commitments.** The voice agent may never negotiate pricing or make commitments. Escalate to Matt.
+
+---
+
+## Integration Notes
+
+- **Google Sheets → Drive automation already exists** (Apps Script, set up by Matt). It auto-creates a Google Drive folder when a new transaction row is added. Document it and connect to it — **do not rebuild it**.
+- When adding a new external service, create a file in `_infrastructure/` documenting: what it does, how it connects, which workspace uses it, and credential storage notes.
+- Business policy is kept **outside** agent prompts — policy changes should not require rebuilding an agent.
+
+---
+
+## Token Budget
+
+- Per task: **4,000 tokens**
+- Per session: **30,000 tokens**
+- If approaching budget: summarize what's done, what's left, and stop cleanly
+
+Load only what's needed. Do not read entire folder trees speculatively.
+
+---
+
+## No Silent Failures
 
 **This system must always tell the user when something goes wrong.** Silent failures are unacceptable.
 
-- Every `except` block that catches a real failure MUST surface the error visibly — not just `logging.warning()`.
-- `logging.warning()` is acceptable ONLY for truly expected, benign conditions (e.g., a file is already up to date). For anything that prevents a deliverable from being created, use `logging.error()` AND notify the user.
+- Every `except` block that catches a real failure MUST surface the error visibly — not just log a warning.
 - If a pipeline step returns `None` or an empty result when content was expected, treat that as a failure and notify.
 - "Non-fatal" does NOT mean "silent." Non-fatal means the pipeline continues — but the user is still told what failed and why.
+- Never expose API keys in the UI, client-side code, browser console logs, or error messages. API keys belong only in server-side code or environment variables.
 
-### Agent Safety Constraints
+---
 
-Agents must NEVER:
-- Delete or move files/directories without explicit user confirmation in chat
-- Run destructive git operations (`git reset --hard`, `git clean`, `git push`) without user approval
-- Modify `.claude/` directory structure, `.mcp.json`, or `CLAUDE.md` without explicit user direction
-- Stage, commit, or push changes without explicit user instruction
+## Agent Safety
 
-Permitted agent actions:
-- Update `MEMORY.md`, `ROADMAP.md`, `ARCHITECTURE.md` freely as part of normal workflow
-- Read any project file for context
+- Never delete or move files/directories without explicit user confirmation in chat
+- Never run destructive git operations (`git reset --hard`, `git clean`, `git push --force`) without user approval
+- Never push to main without user typing an explicit yes
+- Never send client-facing communications — DRAFT only
+- Never modify `.claude/` directory structure, `.mcp.json`, or `CLAUDE.md` without explicit user direction
+- Never stage, commit, or push changes without explicit user instruction
+- Default automation level: **"on the loop"** — AI acts within guardrails, Matt reviews outcomes
+- If unsure about scope: stop and ask
 
-If destructive changes are discovered: stop, report specifics to the user, request permission before recovery steps.
+Permitted without asking: update `MEMORY.md`, `ROADMAP.md`, `ARCHITECTURE.md` as part of normal workflow; read any project file for context.
 
-### Git Merge Protocol — MANDATORY
+If destructive changes are discovered: stop, report specifics, request permission before recovery steps.
 
-Before merging ANY branch into main (or any other branch), you MUST:
+---
 
-1. Run `git log main..<branch> --oneline` and show the full output to the user.
-2. State explicitly: how many commits will be merged, what they contain, and whether any of them predate the current session.
-3. Ask the user: "Do you want all of these merged, or only the changes from this session?"
-4. Wait for explicit confirmation before running `git merge` or `git push`.
+## Git Merge Protocol — MANDATORY
 
-NEVER assume that "merge my fix into main" means "merge everything that happens to be on this branch." Feature branches accumulate history. The user asked for their fix — not every commit that was already sitting there.
+Before merging ANY branch into main:
 
-If a branch is many commits ahead of main and most of those commits predate this session, flag it immediately:
+1. Run `git log main..<branch> --oneline` and show full output
+2. State: how many commits, what they contain, whether any predate this session
+3. Ask: "Do you want all of these merged, or only this session's changes?"
+4. Wait for explicit confirmation before running `git merge` or `git push`
+
+NEVER assume "merge my fix into main" means merge everything on the branch. Feature branches accumulate history.
+
+If a branch is many commits ahead and most predate this session, flag it:
 > "This branch is N commits ahead of main. Only 1 of those is from this session. The rest are older work. Do you want me to merge all N commits, or just cherry-pick the fix from this session?"
 
-### Protect the User. Protect the Codebase.
+---
 
-Before taking any action that touches shared state (merges, pushes, deploys, file deletions, config changes, dependency updates), stop and analyze first. Surface what could go wrong. Do not proceed silently.
+## Protect the User. Protect the Codebase.
 
-Specifically:
-- **Before a merge:** Check for conflicts, migrations, env var changes, or deploy triggers (e.g. GitHub Actions on push to main) that the user may not be aware of.
-- **Before a push to main:** Check whether a CI/CD pipeline will auto-deploy. If yes, tell the user before pushing.
-- **Before any destructive action:** State what will be permanently changed or lost, and confirm with the user.
-- **When you spot a risk the user didn't ask about:** Say it anyway. Don't wait to be asked. If you notice a security issue, a broken config, a missing env var, a silent failure path, or anything that could cause data loss or an outage — surface it immediately.
-- **When something looks wrong in the codebase:** Flag it in plain language. "I noticed X, which could cause Y. Want me to look into it?"
+Before any action touching shared state (merges, pushes, deploys, file deletions, config changes, dependency updates): stop, analyze, surface what could go wrong. Do not proceed silently.
+
+- **Before a merge:** Check for conflicts, migrations, env var changes, or deploy triggers the user may not be aware of.
+- **Before a push to main:** Check whether CI/CD will auto-deploy. If yes, tell the user first.
+- **Before any destructive action:** State what will be permanently changed or lost, and confirm.
+- **When you spot a risk the user didn't ask about:** Say it anyway — security issues, broken configs, missing env vars, silent failure paths.
+- **When something looks wrong:** "I noticed X, which could cause Y. Want me to look into it?"
 
 The user should never be surprised by a consequence of an action you took. If there's any doubt about blast radius, ask first.
