@@ -2,170 +2,93 @@
 
 ---
 
-## Example 1: First Touch Email — Jess's Voice
+## Example 1: First Outreach — Referral Buyer (Agent Mode)
 
-**Handoff card received from Property Research:**
-> Sara M., 78704 buyer, schools matter. 1845 Westwood is $25K over budget. Two alternatives in zone. Lead with school zone. Be honest about the gap.
+**Handoff from Lead Qualifier:**
+> Rachel Torres — pre-approved buyer, $425K, mid-August deadline, moving from Atlanta for a job. Referral from Brian Clark (past client, Matt knows him personally). Goal: warm intro, acknowledge Brian, understand her needs before pulling properties.
 
-**Draft produced:**
-
-```
-DRAFT — Jess — Email — Sara M.
-
-Subject: Zilker Elementary zone + a few homes I'd love to show you
-
-Hi Sara!
-
-Thanks so much for reaching out — I love that you're looking in
-78704. Great taste.
-
-I looked into 1845 Westwood Dr for you. It's a beautiful house:
-3/2, about 1,650 sqft, great lot. And here's the thing you'll
-really care about — it's in the Zilker Elementary attendance zone,
-which is one of the strongest in Austin. Lively Middle is the
-feeder school, also solid. Your kids would be in a great spot.
-
-Honest note on pricing: it's listed at $575K, a bit above the
-$550K range you mentioned. Recent sales on that street are coming
-in between $545-610K, so it's fairly priced. Whether it's worth
-the stretch depends on how firm that number is for you.
-
-I also found two other homes in the same school zone:
-• 2204 Del Curto Rd — $539K, 3/2, newer roof
-• 1601 Kenwood Ave — $548K, 3/2, bigger lot
-
-All three are in the Zilker zone. Would you want to see them this
-weekend? I could line up Saturday morning so you can compare in
-person.
-
-One quick thing — have you had a chance to connect with a lender
-yet? Totally fine if not — I have a great one I can connect you
-with. It just helps us move fast in this area, because homes in
-78704 under $600K tend to get multiple offers pretty quickly.
-
-Looking forward to meeting you!
-Jess
-```
-
-**Context for Jess (below the draft):**
-- 78704 under $600K = expect multiple offers. If Sara moves forward on any of these, start the escalation clause conversation early.
-- Foundation inspection is non-negotiable on 1845 Westwood (1965 build). Mention it casually if she wants to see that one: "I always recommend a foundation specialist for homes from that era."
-- Pre-approval ask is embedded naturally. Don't push harder than this on first touch.
-
----
-
-## Example 2: Bad News — Inspection Results, Jess's Voice
-
-**Handoff card received from Transaction Coordinator:**
-> Foundation settlement on Del Curto. $12-18K estimate. Option period expires Thursday 5 PM. Three paths: repair, credit, terminate. Sara is a first-time buyer, this will feel scary.
-
-**Draft produced — Call Script:**
-
-```
-DRAFT — Jess — Call Script — Sara M.
-
-Jess calls Sara (don't text this — voice call only for bad news)
-
-OPENING (acknowledge, don't alarm)
-• "Hey Sara, I got the inspection report back and I want to
-  walk you through everything. First — the house is in good
-  shape overall. But there is one thing I want us to talk about."
-
-THE FINDING (facts, not fear)
-• "The inspector found some foundation settlement on the east
-  wall. It's not uncommon for homes built in the '60s in this
-  area — the clay soil in 78704 causes movement over time."
-• "The estimate to repair is in the $12-18K range. I'd like us
-  to get a structural engineer out for a more precise number
-  before we make any decisions."
-
-THE OPTIONS (present all three, recommend one)
-• "We have three options, and we've got until Thursday at 5 PM
-  to decide — so no rush today, but let's think it through."
-• "Option 1: Ask the seller to do the repair before closing.
-  Downside is we don't control who does the work."
-• "Option 2 — and this is what I'd recommend — ask for a
-  credit at closing, probably around $15K. You pick the
-  contractor, you control the quality, and you can do it on
-  your timeline."
-• "Option 3: Walk away. You'd lose the $500 option fee, that's
-  it. And there are other homes in the zone."
-
-THE CLOSE (reassure + next step)
-• "This is exactly what the option period is for. There's no
-  wrong answer here."
-• "Want me to get a structural engineer out tomorrow so we have
-  a real number to work with?"
-```
-
-**Follow-up email draft (send after the call):**
-
-```
-DRAFT — Jess — Email — Sara M.
-
-Subject: Del Curto inspection — your options + next steps
-
-Hi Sara,
-
-Thanks for chatting just now. I know that wasn't the news you
-were hoping for, but I'm glad we caught it — that's the whole
-point of the inspection.
-
-Here's a quick recap of your three options:
-
-1. Request seller repair (they choose the contractor)
-2. Request ~$15K credit at closing (you choose the contractor) ← my recommendation
-3. Terminate within the option period (lose $500 option fee only)
-
-I'm getting a structural engineer out tomorrow morning to give
-us a more precise number. Once we have that, we'll have a strong
-position to negotiate from.
-
-Our deadline is Thursday at 5 PM, but I'd love to have our plan
-locked in by Wednesday so we have breathing room.
-
-You've got this — and I've got you. Call me anytime.
-
-Jess
-```
-
-**Context for Jess:**
-- The "You've got this — and I've got you" is very Jess. Keep it.
-- If Sara leans toward walking, don't resist. Property Research has two alternatives on file.
-- If Sara wants to negotiate, flag Diana for strategy review on the credit amount.
-
----
-
-## Example 3: Agent-to-Agent — Marcus, Direct Tone
-
-**Handoff card received from Transaction Coordinator:**
-> Earnest money hasn't been confirmed by title company. Day 3. Need Marcus to follow up with the listing agent.
+**Channel:** Email (first contact with a referral = email is more considered than a cold text)
 
 **Draft produced:**
 
-```
-DRAFT — Marcus — Email — Listing Agent (Johnson deal)
+---
 
-Subject: Earnest money confirmation — 4812 Bolm Rd
+`DRAFT — Matt — Email — Rachel Torres`
 
-Hi [Listing Agent Name],
+**Subject: Welcome to Jacksonville — Brian said you're heading this way**
 
-Following up on the earnest money deposit for 4812 Bolm Rd.
-Contract specifies $5,000 within 3 business days — we're at
-day 3 and Independence Title hasn't confirmed receipt.
+Hey Rachel —
 
-Can you verify the wire was sent? If there's a processing
-delay on the title company side, happy to loop in their
-contact directly.
+Matt here. Brian mentioned you're making the move from Atlanta for a new job — congrats on that. Happy to help you navigate the Jacksonville side of things.
 
-Need to get this squared away today.
+Before I start throwing neighborhoods at you, a couple of quick questions that'll save us both time: Do you have school-age kids? And is there a part of town you'll be working near? Those two answers change everything about where I'd point you.
 
-Thanks,
-Marcus Rivera
-Diana Coleman Real Estate
-```
+One heads-up on your timeline: mid-August is very doable, but it means we'd want to be under contract by early July at the latest. So the sooner we figure out what you're looking for, the better our options.
 
-**Context for Marcus:**
-- This is agent-to-agent, not client-facing. Direct, factual, no warmth needed.
-- If no response by EOD, escalate to Diana. Undeposited earnest money is a contract compliance issue.
-- Don't cc the client on this — it's an operational follow-up.
+Let me know when you have 15–20 minutes for a quick call. Happy to walk you through the neighborhoods that'd fit your situation.
+
+— Matt
+
+---
+
+**Notes to Matt:** Rachel doesn't know Jacksonville — she needs neighborhood education before she can evaluate specific properties. Don't send listings yet. Once you know her job location and school preference, hand to Property Research for neighborhood comparisons.
+
+---
+
+## Example 2: Motivated Seller Response — Investor Mode (RMD)
+
+**Handoff from Lead Qualifier:**
+> Inbound text: "Yeah I might be interested. We've had the house about 12 years. Needs some work. What do you pay?" — Phone: 904-555-0847. Absentee owner outreach list, 32210. Matt responding as RMD Home Buyers.
+
+**Channel:** Text (they texted, respond in kind)
+
+**Draft produced:**
+
+---
+
+`DRAFT — Matt — Text — RMD outreach response, 904-555-0847`
+
+"Hey — this is Matt. Thanks for reaching back. What part of Jacksonville is the house in?"
+
+---
+
+**Notes to Matt:** One sentence, one question. No price talk yet. You need the address before anything else — and you want to hear their story before talking numbers. The less you say up front, the more they'll share.
+
+---
+
+**Follow-up draft (after they give the address):**
+
+`DRAFT — Matt — Text — After receiving address`
+
+"Got it — I know that area. Any chance I could see the inside? Even a quick walk-through. Helps me give you a real number instead of guessing. Happy to work around your schedule."
+
+---
+
+## Example 3: Inspection Bad News — Buyer Client (Agent Mode)
+
+**Handoff from Transaction Coordinator:**
+> Garcia deal — 2847 Longleaf Pine Dr, 32223 (Mandarin). Inspection found: roof replacement needed ($14–18K), HVAC original 2004 (functional but aging). Inspection period expires Friday 5:00 PM. Matt needs to talk options with the Garcias. Draft a call script.
+
+**Channel:** Call script (emotional news — Matt should call, not text)
+
+**Draft produced:**
+
+---
+
+`DRAFT — Matt — Call Script — Garcia buyers`
+
+**Before the call:** They'll be nervous. Lead with calm context before the numbers.
+
+**Talking points:**
+- "I got the inspection report and I want to walk you through it. Short version: nothing that kills the deal, but there are two things worth addressing."
+- **Roof:** "The inspector flagged the roof — it has about 3–4 years of life left. Estimate to replace is $14K–$18K. That's real money."
+- **HVAC:** "The A/C is original 2004 — it's working right now, but it's 22 years old. Secondary issue, but worth noting."
+- **Their options:**
+  1. Request a credit at closing ($14K–$16K for the roof). You keep the cash, hire your own contractor after close.
+  2. Ask the seller to replace the roof before closing. Cleaner, but takes time and they may say no.
+  3. Terminate and get your earnest money back. No penalty — we're inside the inspection period.
+- **Matt's honest take:** "If I were in your shoes, I'd ask for a credit. Gives you control over who does the work."
+- **The deadline:** "We have until Friday at 5 PM to submit our request or terminate in writing. I need a direction from you by Thursday afternoon."
+- **Close with:** "What's your gut telling you? I'll execute whatever you decide."
+
+**After the call:** If they want a credit → hand to TC for the written inspection notice. ⚠️ Legal language — Matt reviews before sending to listing agent.
