@@ -16,7 +16,7 @@ This is NOT `rmd_strat` (the knowledge ingestion system). This repo is the agent
 3. Read `ARCHITECTURE.md` — check what's built vs stubbed
 4. Identify which workspace this task belongs to (routing table below)
 5. Read ONLY that folder's `CONTEXT.md` before starting work
-6. Run `git branch -r --no-merged main` and report any branches ahead of main. Ask: "These branches have unmerged work — should I merge or clean any of them up before we start?" Wait for answer.
+6. Run `git branch -r --no-merged main` — report any branches ahead of main. Ask: "These branches have unmerged work — should I merge or clean any up before we start?" Wait for answer.
 7. State immediately: "Next priority is **[specific task]**. Tackle that, or something else?"
 
 ---
@@ -27,7 +27,7 @@ This is NOT `rmd_strat` (the knowledge ingestion system). This repo is the agent
 2. Update `ROADMAP.md` — mark completed items ✅, add newly discovered tasks
 3. Update `ARCHITECTURE.md` — if any new files created or integrations changed
 4. Run `git log main..<current-branch> --oneline` and show output to user
-5. Ask: "Ready to merge into main?" — **do not merge, push to main, or delete the branch without the user typing an explicit yes in this conversation.** Prior context, implied approval, or task completion does NOT count as permission.
+5. Ask: "Ready to merge into main?" — **do not merge, push to main, or delete the branch without the user typing an explicit yes.** Prior context, implied approval, or task completion does NOT count as permission.
 6. If yes: merge into main, push, delete remote branch (`git push origin --delete <branch>`), delete local branch (`git branch -d <branch>`)
 7. If no: leave branch untouched and note in `MEMORY.md` under "Next Session Priority"
 
@@ -83,17 +83,17 @@ Always read `{folder}/CONTEXT.md` first. Load only that workspace — do not loa
 
 **Writing code or agent files:**
 
-1. **Think before coding.** State assumptions explicitly. If multiple interpretations exist, present them — don't pick silently. If a simpler approach exists, say so. If something is unclear, stop and name what's confusing.
-2. **Simplicity first.** Minimum that solves the problem — nothing speculative. No features beyond what was asked, no abstractions for single-use code. If you write 200 lines and it could be 50, rewrite it.
-3. **Touch only what you must.** Don't refactor adjacent files or improve things that aren't broken. Match existing style. Mention unrelated dead code — don't delete it. Every changed line traces to the user's request.
-4. **Goal-driven execution.** For multi-step tasks, state a brief plan with verifiable success criteria (`1. [Step] → verify: [check]`). Transform vague tasks: "fix the bug" → "write a test that reproduces it, then make it pass."
+1. **Think before coding.** State assumptions explicitly. Present multiple interpretations — don't pick silently. If a simpler approach exists, say so. If something is unclear, stop and name what's confusing.
+2. **Minimum that solves the problem — nothing speculative.** No features beyond what was asked, no abstractions for single-use code. If you write 200 lines and it could be 50, rewrite it.
+3. **Touch only what you must.** Don't refactor adjacent files. Match existing style. Mention unrelated dead code — don't delete it. Every changed line traces to the user's request.
+4. **Goal-driven execution.** For multi-step tasks, state a brief plan with verifiable success criteria (`1. [Step] → verify: [check]`). "Fix the bug" → "write a test that reproduces it, then make it pass."
 5. **Use the model only for judgment calls.** Classification, drafting, summarization, extraction — yes. Routing, retries, deterministic transforms — no. If code can answer, code answers.
 6. **Token budgets are not advisory.** Per-task: 4,000 tokens. Per-session: 30,000 tokens. Surface the breach. Do not silently overrun.
 7. **Surface conflicts, don't average them.** If two patterns contradict, pick one (more recent / more tested), explain why, flag the other for cleanup.
-8. **Read before you write.** Read exports, immediate callers, shared utilities before adding code. If unsure why something is structured a certain way, ask.
+8. **Read before you write.** Read exports, immediate callers, shared utilities before touching anything. If unsure why something is structured a certain way, ask.
 9. **Tests verify intent, not just behavior.** Tests must encode WHY behavior matters. A test that can't fail when business logic changes is wrong.
 10. **Checkpoint after every significant step.** Summarize what was done, what's verified, what's left. Don't continue from a state you can't describe back.
-11. **Match the codebase's conventions, even if you disagree.** Conformance > taste. If a convention is harmful, surface it — don't fork silently.
+11. **Match the codebase's conventions, even if you disagree.** Conformance > taste. Surface harmful conventions — don't fork silently.
 12. **Fail loud.** "Completed" is wrong if anything was skipped silently. "Tests pass" is wrong if any were skipped. Default to surfacing uncertainty.
 13. **Write tests you would bet your existence on.** If the code is broken, the test fails. If the test passes, the user's first run works. No inline copies of production logic. No over-mocking. No assertions that can't distinguish working from broken. Patch only external I/O — never the logic under test.
 14. **No `identity.md` in data/knowledge folders.** `05_market_intel` and `_shared` data files are knowledge bases, not personas.
@@ -118,25 +118,23 @@ Always read `{folder}/CONTEXT.md` first. Load only that workspace — do not loa
 
 This system must always tell the user when something goes wrong. Silent failures are unacceptable.
 
-- Every failure MUST surface visibly — not just logged as a warning.
+- Every failure must surface visibly — not just logged as a warning.
 - If a step returns `None` or empty when content was expected, treat it as a failure and notify.
 - "Non-fatal" means the pipeline continues — not that the user isn't told.
 - Never expose API keys in UI, client-side code, console logs, or error messages.
 
 ---
 
-## Agent Safety
+## Operating Limits
 
-- Never delete or move files without explicit user confirmation in chat
-- Never run destructive git operations (`git reset --hard`, `git clean`, `git push --force`) without user approval
-- Never push to main without user typing an explicit yes
-- Never send client-facing communications — DRAFT only
-- Never modify `.claude/`, `.mcp.json`, or `CLAUDE.md` without explicit direction
-- Never stage, commit, or push without explicit user instruction
-- Default automation level: **"on the loop"** — AI acts within guardrails, Matt reviews outcomes
-- If unsure about scope: stop and ask
-
-Permitted without asking: update `MEMORY.md`, `ROADMAP.md`, `ARCHITECTURE.md`; read any project file.
+- Per task: **4,000 tokens** | Per session: **30,000 tokens**
+- If approaching budget: summarize what's done, what's left, and stop cleanly.
+- Never delete files without explicit user confirmation.
+- Never push to main without user typing an explicit yes.
+- Never modify `.claude/`, `.mcp.json`, or `CLAUDE.md` without explicit direction.
+- Never stage, commit, or push without explicit user instruction.
+- Default automation level: **"on the loop"** — AI acts within guardrails, Matt reviews outcomes.
+- If unsure about scope: stop and ask.
 
 ---
 
@@ -149,7 +147,7 @@ Before merging any branch into main:
 4. Wait for explicit confirmation before running `git merge` or `git push`.
 
 NEVER assume "merge my fix" means merge everything on the branch. If most commits predate this session, flag it:
-> "This branch is N commits ahead of main. Only X of those are from this session. Do you want all N merged, or just cherry-pick the session's work?"
+> "This branch is N commits ahead of main. Only X are from this session. Do you want all N merged, or just this session's work?"
 
 ---
 
