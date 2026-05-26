@@ -2,225 +2,135 @@
 
 ---
 
-## Example 1: New Deal Opening — Building the Timeline
+## Example 1: New Deal Intake — Agent Mode, Financed Buyer
 
-**Handoff card received from Orchestrator:**
-> Sara M. accepted on 2204 Del Curto Rd at $535K. Contract executed today. Jess is the agent. First-time buyer.
+**Handoff from Client Communication:**
+> Rachel Torres (buyer, Matt's client) just went under contract on 94 Conservation Creek Dr, Nocatee (32081). Purchase price: $419,900. FAR/BAR AS IS + financing rider. Inspection period: 10 days. Earnest money: $4,200. Conventional loan, pre-approved through AmeriFirst Financial. Title: Heritage Title of NE Florida. Closing target: June 30.
 
-**What I produce — Deal Package:**
+**Action taken:**
 
 ```
-From:        Transaction Coordinator
-To:          Jess (agent status report)
-Case:        Sara M. — 2204 Del Curto Rd, executed contract
-Agent:       Jess
-Date:        2026-05-28
-Confidence:  High
+DEAL INTAKE — Rachel Torres / 94 Conservation Creek Dr, 32081
+Mode:       Agent (Matt representing buyer)
+Contract:   FAR/BAR AS IS + Financing Rider
+Effective:  May 20, 2026 (Day 0)
+Type:       Track 1 (Financed buyer)
+Routing:    Confirmed via routing_guide.md — Track 1 applies
 
-SUMMARY
-Contract executed. Deal timeline built. Three immediate action
-items for the next 72 hours.
+DEAL TIMELINE:
+Day 0:    Contract effective (May 20)
+Day 3:    EMD due at Heritage Title ($4,200) → Confirm by May 23
+Day 10:   Inspection period expires (May 30, 5:00 PM)
+          → Flag May 28 (48 hrs) + May 29 (24 hrs)
+Day 10:   Written inspection notice deadline if repairs/credit needed
+Day 10:   Appraisal order flag — if AmeriFirst hasn't ordered by May 27, flag
+Day 25:   Title commitment expected → Flag June 14 if not received
+Day 31:   Financing contingency expires (June 20) → Flag June 18 (48 hrs)
+Day 30:   Survey expected → Flag June 19 if not received
+T-3:      Closing Disclosure due (June 27) → Flag June 26 if not received
+T-1:      Final walkthrough (June 29)
+Day 41:   Closing (June 30)
 
-KEY DETAILS
-Property:     2204 Del Curto Rd, Austin TX 78704
-Price:        $535,000
-Buyer:        Sara M.
-Agent:        Jess Nakamura
-Lender:       First National (pre-approval on file)
-Title Co:     Independence Title, S. Lamar office
+LENDER TRACK:
+- Lender: AmeriFirst Financial — contact TBD (Matt to provide)
+- Pre-approval: ✅ On file
+- Rate lock: Pending → Flag May 24 if not confirmed
+- Appraisal: Flag May 27 if not ordered
 
-DEAL TIMELINE
-⚡ May 30  — Earnest money deposit ($5,000) — 2 DAYS
-🔍 May 31  — Schedule inspection (rec: before June 2)
-🔍 June 2  — Target: inspection complete
-⚠️ June 7   — OPTION PERIOD EXPIRES — 5:00 PM
-🏦 June 4   — Verify lender ordered appraisal
-📋 June 15  — Title commitment due
-💰 June 18  — Financing contingency expires
-📐 June 20  — Survey due
-📄 July 9   — Closing disclosure (T-3)
-🏠 July 11  — Final walkthrough
-🔑 July 12  — CLOSING
+DOCUMENT STATUS:
+✅ Executed contract
+⏳ EMD receipt (due May 23)
+⏳ Seller's Property Disclosure (due within inspection period)
+⏳ Home inspection (schedule by May 23)
 
-LENDER TRACKER
-☐ Pre-approval letter .............. ✅ On file
-☐ Rate lock ........................ ❓ Confirm date + expiration
-☐ Appraisal ordered ............... ☐ Verify by June 4
-☐ Appraisal received .............. ☐
-☐ Appraisal at value? ............. ☐
-☐ Conditional approval ............ ☐
-☐ Conditions cleared .............. ☐
-☐ Clear to close .................. ☐
-☐ Final VOE ....................... ☐ T-2 (July 10)
+KEY CONTACTS:
+- Title: Heritage Title of NE Florida — [contact TBD]
+- Lender: AmeriFirst Financial — [contact TBD]
 
-DOCUMENT CHECKLIST
-☑ Executed contract ............... ✅ Received
-☐ Option money receipt ............ ☐ Due today
-☐ Earnest money receipt ........... ☐ Due May 30
-☐ Seller's disclosure ............. ☐ Request from listing agent
-☐ Inspection report ............... ☐ Schedule ASAP
-☐ Repair amendment ................ ☐ If applicable
-☐ Appraisal report ................ ☐ Pending lender order
-☐ Title commitment ................ ☐ Due ~June 15
-☐ Survey .......................... ☐ Due ~June 20
-☐ Closing disclosure .............. ☐ Due July 9
-☐ Final walkthrough ............... ☐ July 11
-
-CONTEXT
-First-time buyer — expect more questions than usual. Jess should
-proactively update Sara on progress rather than waiting for her to
-ask. Pre-1970 build in 78704 = foundation inspection is critical.
-Schedule it within the first 3 days of option period.
-
-NEXT 72 HOURS — IMMEDIATE ACTIONS
-1. Confirm earnest money wire by May 30 (flag title company)
-2. Schedule inspection for this week — foundation inspection
-   specifically, not just general
-3. Confirm rate lock with First National — need date + expiration
-
-NEXT ACTION
-Jess: confirm all three items above by end of day Friday. I'll
-flag at 48 hours if any are incomplete.
+RISK STATUS: 🟢 Green — All tracks on schedule.
 ```
 
 ---
 
-## Example 2: Option Period Crisis — Inspection Results
+## Example 2: Inspection Period Decision — Written Notice and Credit Request
 
-**Incoming from Jess via Slack:**
-> "Foundation cracks on the east wall. Inspector says $12-18K. Option period ends Thursday. What do we do?"
+**Status update (Day 8 flag):**
+> Inspection on 94 Conservation Creek Dr completed. Two items: (1) attic insulation below code — est. $1,800; (2) deck fascia wood rot — est. $400–$600. Inspection period expires May 30, 5:00 PM. Matt has decided to request a $2,200 closing credit. Written notice needed.
 
-**What I produce — Decision Framework + Handoff to Client Communication:**
+**Action taken:**
 
 ```
-From:        Transaction Coordinator
-To:          Client Communication
-Case:        Sara M. — inspection results, repair negotiation
-Agent:       Jess
-Date:        2026-06-03
-Confidence:  Medium
+DEAL UPDATE — Rachel Torres / 94 Conservation Creek Dr
+Date:     May 28, 2026 (Day 8 — 48-hour flag)
 
-SUMMARY
-Inspection found foundation settlement on east wall. Est. $12-18K
-repair. Option period expires Thursday June 7 at 5:00 PM — 4 days
-remain. Sara needs to understand her options and decide by
-Wednesday to leave negotiation time. This is a BAD NEWS delivery.
+INSPECTION RESULTS:
+- Item 1: Attic insulation supplement — est. $1,800
+- Item 2: Deck fascia rot — est. $400–$600
+- Matt's decision: Request $2,200 closing credit
 
-KEY DETAILS
-- Issue: Foundation settlement, east wall
-- Repair estimate: $12,000 - $18,000
-- Deadline: Option period expires June 7, 5:00 PM (4 days)
-- Decision needed by: June 5 (Wednesday EOD) to allow negotiation
+⚠️ Written notice must be delivered to seller's agent before
+May 30, 5:00 PM.
 
-THREE PATHS
-1. Request seller repair before closing
-   Pro: No out-of-pocket for Sara
-   Con: Seller chooses contractor, quality unknown, may delay closing
+Routing: → Client Communication
+Request: Draft Matt's notice to listing agent — agent-to-agent
+message, professional, concise. Two items listed, $2,200
+credit amount, request seller's response before Thursday EOD.
+⚠️ Flag for Matt: legal language — review before sending.
 
-2. Request $15K credit at closing (RECOMMENDED)
-   Pro: Sara controls repair quality and timeline
-   Con: Seller may counter lower; Sara needs cash reserves for repair
+NEXT:
+- Track seller's response (target within 48 hours)
+- If no response by May 29 PM, flag to Matt
+- If accepted: ✅ update deal status, move to post-inspection
+- If declined: Matt + client decide to terminate or proceed as-is
 
-3. Terminate within option period
-   Pro: Clean exit, loses only $500 option fee
-   Con: Back to searching in competitive 78704 market
-
-DEAL STATUS UPDATE
-🟢 Earnest money: deposited, confirmed
-🔴 Inspection: FOUNDATION ISSUE — decision required
-🟡 Rate lock: confirmed through July 15 — still has runway
-🟢 Title: commitment ordered, no issues flagged
-⚪ Survey: not yet ordered (normal for this stage)
-
-CONTEXT
-Sara is a first-time buyer. Foundation issues sound terrifying
-if you've never dealt with them before. The dollar amount is real
-but NOT catastrophic for this price range — frame it as "common
-in 78704 pre-1970 builds" not "your house is broken."
-
-Do NOT lead with the dollar amount. Lead with: "the inspection
-found something we need to talk about."
-
-Jess's voice profile says she's proactive and two steps ahead.
-She should present this as "I already have a plan for this" not
-"I don't know what to do."
-
-If Sara wants to walk: no pressure. The option period exists for
-this exact reason. Property Research already has two alternatives
-on file from the initial search.
-
-GAPS
-- Has Diana weighed in on negotiation strategy for this deal?
-- Seller's motivation level (affects which path is realistic)
-
-NEXT ACTION
-Draft call script + follow-up email in Jess's voice. Calm,
-educational, three clear options with recommendation. Deadline
-embedded naturally: "We have until Thursday at 5 to decide, but
-I'd love to have our plan by Wednesday so we have room."
+RISK STATUS: 🟡 Yellow — Deadline in 48 hours. Awaiting written
+notice + seller response.
 ```
 
 ---
 
-## Example 3: T-7 Closing Status Check
+## Example 3: Investor Cash Close — Expedited Timeline
 
-**Self-triggered: 7 days before closing on the Ruiz deal.**
+**Handoff from Lead Qualifier:**
+> Matt (RMD Home Buyers) agreed to terms with Linda Okafor on 4217 Ramona Blvd, Jacksonville 32205. Cash purchase. Price: $175,000. PSA to be executed. Target close: 14 days. Linda needs to be out by end of month.
+
+**Action taken:**
 
 ```
-From:        Transaction Coordinator
-To:          Marcus (agent status report)
-Case:        Ruiz — T-7 closing status check
-Agent:       Marcus
-Date:        2026-07-05
-Confidence:  High
+DEAL INTAKE — RMD Investor Purchase / 4217 Ramona Blvd, 32205
+Mode:       Investor (RMD buying directly)
+Contract:   FAR/BAR AS IS or custom PSA — Matt to confirm
+Effective:  May 26, 2026 (Day 0)
+Type:       Investor Cash — Routing confirmed via routing_guide.md
 
-SUMMARY
-7 days to closing on 4812 Bolm Rd. Two items need attention:
-closing disclosure hasn't arrived yet (due T-3 = July 9), and
-final VOE needs scheduling.
+INVESTOR TIMELINE:
+Day 0:    PSA executed (May 26)
+Day 3:    EMD due → Confirm by May 29 (amount TBD from PSA)
+Day 1:    Title search must start TODAY — 14-day close requires
+          immediate title work. Flag if not initiated by EOD.
+Day 7:    Due diligence period expires (June 2, 5:00 PM)
+          → Flag June 1 (48 hrs) + June 2 AM (24 hrs)
+Day 7:    Walk-through + contractor scope completed
+          → Flag June 1 if not done
+Day 14:   Title commitment expected (June 9) → Flag June 8
+Day 14:   Target closing (June 9) → T-3 check June 6
 
-DEAL TIMELINE STATUS
-✅ Contract executed .............. March 28
-✅ Option period .................. Cleared April 7
-✅ Inspection ..................... Clean — no repair needed
-✅ Appraisal ...................... At value ($488K)
-✅ Financing contingency .......... Cleared April 18
-✅ Title commitment ............... Clean, received April 20
-✅ Survey ......................... Received May 1
-🟡 Closing disclosure ............ NOT YET RECEIVED (due July 9)
-🟡 Final walkthrough ............. Not yet scheduled (schedule by July 10)
-🟡 Final VOE ..................... Not yet scheduled (schedule July 10)
-✅ Closing ........................ July 12
+DOCUMENT STATUS:
+⏳ PSA / AS IS contract — executed version needed
+⏳ RMD proof of funds — confirm on file
+⏳ EMD receipt from title (by May 29)
+⏳ Title commitment (by June 9)
+⏳ HUD-1 / settlement statement (T-1)
+⏳ Deed (title prepares, signed at closing)
 
-LENDER TRACKER
-✅ Pre-approval ................... On file
-✅ Rate lock ...................... Locked at 6.85%, expires July 15
-✅ Appraisal ...................... At value
-✅ Conditional approval ........... Received May 5
-✅ Conditions cleared ............. June 20
-🟡 Clear to close ................ Waiting on CD
-🟡 Final VOE ..................... Schedule for July 10
+KEY CONTACTS:
+- Title: TBD — Matt to confirm which title company
+- Seller: Linda Okafor — Matt has contact
 
-DOCUMENT CHECKLIST: 9 of 11 received
-☑ Executed contract ✅
-☑ Earnest money receipt ✅
-☑ Inspection report ✅
-☑ Appraisal report ✅
-☑ Title commitment ✅
-☑ Survey ✅
-☑ Seller's disclosure ✅
-☑ HOA docs ✅
-☑ Insurance binder ✅
-☐ Closing disclosure ⏳ Due July 9
-☐ Final walkthrough ⏳ Schedule for July 11
+⚠️ 14-day close is aggressive. Title search must start Day 1.
+Any title issues (liens, encumbrances) will blow the timeline.
+Flag immediately if title finds anything.
 
-OVERALL: 🟢 Healthy deal. Two routine items outstanding.
-
-NEXT ACTION
-Marcus: (1) Ping lender re: closing disclosure — should be in
-hand by Wednesday. (2) Schedule final walkthrough for Friday
-morning. (3) Remind Ruiz family: no major purchases, no job
-changes between now and closing.
+RISK STATUS: 🟡 Yellow — Fast timeline. Title work is on the
+critical path. No margin for delay.
 ```
-
-**Why this matters:** The T-7 check catches problems while there's still time to fix them. A missing closing disclosure at T-3 is an emergency. At T-7, it's a phone call.
